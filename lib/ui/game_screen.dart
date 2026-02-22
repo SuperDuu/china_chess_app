@@ -9,6 +9,7 @@ import '../ui/board/board_widget.dart';
 import '../ui/analysis/analysis_dashboard.dart';
 import '../ui/hint/hint_button.dart';
 import '../game/xiangqi_model.dart';
+import '../ui/analysis/mentor_panel.dart';
 
 /// Main game screen combining board, controls, and analysis dashboard.
 class GameScreen extends StatefulWidget {
@@ -26,9 +27,15 @@ class _GameScreenState extends State<GameScreen> {
     super.initState();
     // Initialize the engine and reset board on first load
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<GameBloc>().add(ResetGameEvent());
+      _initGame();
       context.read<EngineBloc>().add(InitializeEngineEvent());
     });
+  }
+
+  void _initGame() {
+    final startColor = widget.playerColor ?? PieceColor.red;
+    context.read<GameBloc>().add(ResetGameEvent(startingSide: startColor));
+    _triggerAnalysis(XiangqiBoard.startingPosition(sideToMove: startColor));
   }
 
   @override
@@ -42,6 +49,9 @@ class _GameScreenState extends State<GameScreen> {
             // Apply skill level if combat mode
             if (widget.skillLevel != null) {
               UcciController.instance.setSkillLevel(widget.skillLevel!);
+            } else {
+              // Study Mode / Analysis -> Max Power
+              UcciController.instance.setMaxPower();
             }
             final fen = ctx.read<GameBloc>().state.fen;
             ctx.read<EngineBloc>().add(AnalyzePositionEvent(fen));
@@ -99,31 +109,82 @@ class _GameScreenState extends State<GameScreen> {
                   const Expanded(child: HintButton()),
                   const SizedBox(width: 8),
 
-                  // LƯỢT ĐI / Turn Indicator (Syncs instantly)
-                  BlocBuilder<GameBloc, GameState>(
-                    builder: (ctx, state) {
-                      final isRedTurn =
-                          state.board.sideToMove == PieceColor.red;
-                      return Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: isRedTurn
-                              ? const Color(0xFFCC3333)
-                              : const Color(0xFF4A4A5A),
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                              color: const Color(0xFF8B4513).withOpacity(0.3)),
+                  // LƯỢT ĐI & GEMINI BUTTON
+                  Expanded(
+                    flex: 2,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Turn Indicator
+                        BlocBuilder<GameBloc, GameState>(
+                          builder: (ctx, state) {
+                            final sideToMove = state.board.sideToMove;
+                            final isRedTurn = sideToMove == PieceColor.red;
+                            return Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 8),
+                              decoration: BoxDecoration(
+                                color: isRedTurn
+                                    ? const Color(0xFFCC3333)
+                                    : const Color(0xFF4A4A5A),
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color: const Color(0xFF8B4513)
+                                        .withOpacity(0.3)),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  _buildTurnIndicator(sideToMove),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    isRedTurn
+                                        ? 'ĐẾN LƯỢT: ĐỎ'
+                                        : 'ĐẾN LƯỢT: ĐEN',
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
                         ),
-                        child: Text(
-                          isRedTurn ? 'LƯỢT ĐI: ĐỎ' : 'LƯỢT ĐI: ĐEN',
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold),
+
+                        // GEMINI TRIGGER BUTTON
+                        BlocBuilder<AnalysisBloc, AnalysisState>(
+                          builder: (ctx, state) {
+                            final canAnalyze = state.latestOutput != null;
+                            return IconButton(
+                              icon: Icon(
+                                Icons.lightbulb_circle_rounded,
+                                color: state.isGeminiLoading
+                                    ? const Color(0xFFE8B923)
+                                    : (canAnalyze
+                                        ? const Color(0xFF8B4513)
+                                        : Colors.grey),
+                                size: 32,
+                              ),
+                              onPressed: (canAnalyze && !state.isGeminiLoading)
+                                  ? () {
+                                      final out = state.latestOutput!;
+                                      ctx
+                                          .read<AnalysisBloc>()
+                                          .add(RequestGeminiAnalysisEvent(
+                                            fen: ctx.read<GameBloc>().state.fen,
+                                            score: out.scoreCp ?? 0,
+                                            bestMove: out.bestMove ?? '?',
+                                            pvMoves: out.pvMoves ?? [],
+                                          ));
+                                    }
+                                  : null,
+                              tooltip: 'Hỏi Cố vấn Vũ Đức Du',
+                            );
+                          },
                         ),
-                      );
-                    },
+                      ],
+                    ),
                   ),
 
                   const SizedBox(width: 8),
@@ -144,12 +205,15 @@ class _GameScreenState extends State<GameScreen> {
                     icon: Icons.refresh_rounded,
                     label: 'Mới',
                     onTap: () {
-                      context.read<GameBloc>().add(ResetGameEvent());
+                      _initGame();
                     },
                   ),
                 ],
               ),
             ),
+
+            // GEMINI MENTOR PANEL
+            const MentorPanel(),
 
             // Analysis dashboard
             const Expanded(
@@ -182,10 +246,11 @@ class _GameScreenState extends State<GameScreen> {
           ),
           SizedBox(width: 10),
           Text(
-            'VuDucDu',
+            'Vũ Đức Du',
             style: TextStyle(
               color: Color(0xFF888AAA),
               fontSize: 14,
+              fontStyle: FontStyle.italic,
               letterSpacing: 0.5,
             ),
           ),
@@ -254,6 +319,29 @@ class _GameScreenState extends State<GameScreen> {
         }
       }
     }
+  }
+
+  void _triggerAnalysis(XiangqiBoard board) {
+    context.read<EngineBloc>().add(AnalyzePositionEvent(board.toFen()));
+  }
+
+  Widget _buildTurnIndicator(PieceColor turn) {
+    return Container(
+      width: 12,
+      height: 12,
+      decoration: BoxDecoration(
+        color: turn == PieceColor.red
+            ? const Color(0xFFffeb3b) // bright highlight
+            : const Color(0xFFE8B923),
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            blurRadius: 4,
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -343,7 +431,7 @@ class _ControlButton extends StatelessWidget {
                 style: const TextStyle(
                     color: Color(0xFF8B4513),
                     fontSize: 12,
-                    fontWeight: FontWeight.w500)),
+                    fontWeight: FontWeight.bold)),
           ],
         ),
       ),

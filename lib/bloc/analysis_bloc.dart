@@ -3,6 +3,7 @@ import '../game/xiangqi_model.dart';
 import '../game/analysis_model.dart';
 import '../game/notation_translator.dart';
 import '../engine/ucci_controller.dart';
+import '../services/gemini_service.dart';
 
 // ─── Events ─────────────────────────────────────────────────────────────────
 
@@ -17,6 +18,19 @@ class UpdateAnalysisEvent extends AnalysisEvent {
 class RequestHintEvent extends AnalysisEvent {
   final XiangqiBoard board;
   RequestHintEvent(this.board);
+}
+
+class RequestGeminiAnalysisEvent extends AnalysisEvent {
+  final String fen;
+  final int score;
+  final String bestMove;
+  final List<String> pvMoves;
+  RequestGeminiAnalysisEvent({
+    required this.fen,
+    required this.score,
+    required this.bestMove,
+    required this.pvMoves,
+  });
 }
 
 class DismissHintEvent extends AnalysisEvent {}
@@ -35,6 +49,9 @@ class AnalysisState {
   final Map<int, List<String>> translatedPvs;
   final PieceColor sideToAnalyze;
   final String? pvExplanation;
+  final String? geminiExplanation;
+  final bool isGeminiLoading;
+  final String? lastGeminiFen;
 
   const AnalysisState({
     this.latestOutput,
@@ -48,6 +65,9 @@ class AnalysisState {
     this.translatedPvs = const {},
     this.sideToAnalyze = PieceColor.red,
     this.pvExplanation,
+    this.geminiExplanation,
+    this.isGeminiLoading = false,
+    this.lastGeminiFen,
   });
 
   AnalysisState copyWith({
@@ -62,6 +82,10 @@ class AnalysisState {
     Map<int, List<String>>? translatedPvs,
     PieceColor? sideToAnalyze,
     String? pvExplanation,
+    String? geminiExplanation,
+    bool? isGeminiLoading,
+    String? lastGeminiFen,
+    bool clearGemini = false,
   }) =>
       AnalysisState(
         latestOutput: latestOutput ?? this.latestOutput,
@@ -75,6 +99,11 @@ class AnalysisState {
         translatedPvs: translatedPvs ?? this.translatedPvs,
         sideToAnalyze: sideToAnalyze ?? this.sideToAnalyze,
         pvExplanation: pvExplanation ?? this.pvExplanation,
+        geminiExplanation:
+            clearGemini ? null : (geminiExplanation ?? this.geminiExplanation),
+        isGeminiLoading: isGeminiLoading ?? this.isGeminiLoading,
+        lastGeminiFen:
+            clearGemini ? null : (lastGeminiFen ?? this.lastGeminiFen),
       );
 
   /// Generates the explanation message.
@@ -132,12 +161,14 @@ String _selectHintQuestion(
 
 class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
   final UcciController _ctrl;
+  final GeminiService _gemini = GeminiService();
 
   AnalysisBloc({UcciController? controller})
       : _ctrl = controller ?? UcciController.instance,
         super(const AnalysisState()) {
     on<UpdateAnalysisEvent>(_onUpdate);
     on<RequestHintEvent>(_onHint);
+    on<RequestGeminiAnalysisEvent>(_onGeminiAnalysis);
     on<DismissHintEvent>(_onDismiss);
   }
 
@@ -247,6 +278,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
       translatedPvs: currentTranslatedPvs,
       sideToAnalyze: currentPlayer,
       pvExplanation: pvExpl,
+      clearGemini: fen != state.lastGeminiFen, // Clear if FEN changed
     ));
 
     // If score dropped significantly, also run opponent intent analysis
@@ -269,6 +301,28 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
 
   void _onDismiss(DismissHintEvent e, Emitter<AnalysisState> emit) {
     emit(state.copyWith(showingHint: false));
+  }
+
+  Future<void> _onGeminiAnalysis(
+      RequestGeminiAnalysisEvent e, Emitter<AnalysisState> emit) async {
+    if (state.isGeminiLoading) return;
+    // Cache check: if we already have the explanation for this position
+    if (e.fen == state.lastGeminiFen && state.geminiExplanation != null) return;
+
+    emit(state.copyWith(isGeminiLoading: true, clearGemini: true));
+
+    final result = await _gemini.analyzePosition(
+      fen: e.fen,
+      score: e.score,
+      bestMove: e.bestMove,
+      pvMoves: e.pvMoves,
+    );
+
+    emit(state.copyWith(
+      isGeminiLoading: false,
+      geminiExplanation: result,
+      lastGeminiFen: e.fen,
+    ));
   }
 
   String? _flipFen(EngineOutput o, XiangqiBoard b) {

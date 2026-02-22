@@ -31,7 +31,7 @@ class GrandmasterMentorApp extends StatelessWidget {
         BlocProvider(create: (_) => AnalysisBloc()),
       ],
       child: MaterialApp(
-        title: 'VuDucDu — 象棋',
+        title: 'Cờ Tướng AI',
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme: _buildLightTheme(),

@@ -87,6 +87,13 @@ class UcciController {
     print('[Engine] Ready for analysis.');
   }
 
+  /// Configure for Max Power (Study Mode)
+  void setMaxPower() {
+    _send('setoption name Skill Level value 20');
+    _send('setoption name Threads value 4');
+    _send('setoption name Hash value 128'); // More hash for deep calc
+  }
+
   void _send(String cmd) => _process.send(cmd);
 
   Future<void> _waitFor(bool Function(EngineOutput) predicate,
@@ -95,7 +102,7 @@ class UcciController {
 
   /// Analyze current position at given FEN.
   Future<void> analyzePosition(String fen,
-      {int depth = 20, int movetime = 5000}) async {
+      {int depth = 22, int movetime = 5000}) async {
     if (_state == EngineRunState.analyzing) stopAnalysis();
     _state = EngineRunState.analyzing;
     _send('position fen $fen');

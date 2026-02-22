@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'settings/settings_screen.dart';
 import 'game_screen.dart';
 import 'lessons/lessons_screen.dart';
 import '../game/xiangqi_model.dart';
@@ -56,6 +57,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5DEB3), // Wheat / Beige
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const SettingsScreen()),
+        ),
+        backgroundColor: const Color(0xFF8B4513),
+        child: const Icon(Icons.settings, color: Colors.white),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,10 +81,11 @@ class HomeScreen extends StatelessWidget {
             const Text(
               'Tác giả: VŨ ĐỨC DU',
               style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF556B2F),
-                letterSpacing: 1.5,
+                fontSize: 16,
+                fontWeight: FontWeight.w300,
+                fontStyle: FontStyle.italic,
+                color: Color(0xFF5D4037),
+                letterSpacing: 2,
               ),
             ),
             const SizedBox(height: 60),

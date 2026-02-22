@@ -78,16 +78,15 @@ class _BoardPainter extends CustomPainter {
 
   void _drawCoordinates(Canvas canvas, Size size, double cw, double ch) {
     final textStyle = TextStyle(
-      fontSize: size.width * 0.032,
-      color: const Color(0xFF8B4513),
+      fontSize: size.width * 0.035,
+      color: const Color(0xFF8B4513).withOpacity(0.8),
       fontWeight: FontWeight.bold,
     );
 
-    // Bottom numbers 1-9 (from right to left)
+    // Bottom numbers 1-9 (Red perspective)
     for (int c = 0; c <= 8; c++) {
       final x = c * cw + cw / 2;
-      // Position clearly below the board
-      final y = size.height - 12;
+      final y = size.height - 10;
       final text = (9 - c).toString();
       _drawText(canvas, text, Offset(x, y),
           fontSize: textStyle.fontSize!,
@@ -95,11 +94,10 @@ class _BoardPainter extends CustomPainter {
           fontWeight: FontWeight.bold);
     }
 
-    // Side letters a-j (0-9 rows)
+    // Side letters a-i (0-9 rows)
     final letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
     for (int r = 0; r <= 9; r++) {
-      // Position clearly to the left of the board
-      final x = 10.0;
+      final x = 12.0; // Pushed slightly right for better alignment
       final y = r * ch + ch / 2;
       if (r < letters.length) {
         _drawText(canvas, letters[r], Offset(x, y),
@@ -233,6 +231,34 @@ class _BoardPainter extends CustomPainter {
     for (final move in gameState.validMoves) {
       canvas.drawCircle(Offset(move.col * cw + cw / 2, move.row * ch + ch / 2),
           cw * 0.1, dotPaint);
+    }
+
+    // --- NEON GLOW BESTMOVE SUGGESTION ---
+    if (analysisState.showingHint &&
+        analysisState.latestOutput?.bestMove != null) {
+      final move = analysisState.latestOutput!.bestMove!;
+      if (move.length >= 4) {
+        final from = BoardPos.fromUcci(move.substring(0, 2));
+        if (from != null) {
+          final cx = from.col * cw + cw / 2;
+          final cy = from.row * ch + ch / 2;
+
+          // Outer Neon Glow
+          final neonPaint = Paint()
+            ..color = const Color(0xFFE8B923) // Yellow Gold
+            ..maskFilter = const MaskFilter.blur(BlurStyle.outer, 10)
+            ..strokeWidth = 4.0;
+
+          canvas.drawCircle(Offset(cx, cy), cw * 0.45, neonPaint);
+
+          // Pulse/Inner glow
+          final brightPaint = Paint()
+            ..color = const Color(0xFFFFD700).withOpacity(0.6)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 3.0;
+          canvas.drawCircle(Offset(cx, cy), cw * 0.45, brightPaint);
+        }
+      }
     }
 
     // Preview move highlight

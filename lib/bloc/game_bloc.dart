@@ -6,7 +6,10 @@ import '../game/analysis_model.dart';
 
 abstract class GameEvent {}
 
-class ResetGameEvent extends GameEvent {}
+class ResetGameEvent extends GameEvent {
+  final PieceColor startingSide;
+  ResetGameEvent({this.startingSide = PieceColor.red});
+}
 
 class SelectPieceEvent extends GameEvent {
   final BoardPos pos;
@@ -90,7 +93,9 @@ class GameBloc extends Bloc<GameEvent, GameState> {
 
   void _onReset(ResetGameEvent e, Emitter<GameState> emit) {
     _boardHistory.clear();
-    emit(GameState(board: XiangqiBoard.startingPosition()));
+    emit(GameState(
+      board: XiangqiBoard.startingPosition(sideToMove: e.startingSide),
+    ));
   }
 
   void _onSelect(SelectPieceEvent e, Emitter<GameState> emit) {
