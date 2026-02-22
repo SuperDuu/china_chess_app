@@ -1,17 +1,14 @@
-# china_chess_app
+# CỜ TƯỚNG (Xiangqi App)
 
-A new Flutter project.
+Ứng dụng Cờ Tướng hiện đại tích hợp AI Pikafish (Stockfish variant) qua FFI, hỗ trợ phân tích nước đi sâu và học tập bài học kỳ nghệ.
 
-## Getting Started
+## Tính năng chính
+- **Đánh với máy**: Nhiều cấp độ từ Dễ đến Khó.
+- **Luyện tập**: Phân tích nước đi chi tiết với Deep Calc.
+- **Bí kíp**: Kho bài học Khai - Trung - Tàn cuộc.
+- **Hiệu năng**: Engine chạy native mượt mà trên Android 16+.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Phát triển
+- Framework: Flutter
+- Engine: Pikafish (C++ FFI)
+- Tác giả: Vũ Đức Du
