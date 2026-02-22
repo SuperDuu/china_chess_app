@@ -7,13 +7,13 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   void _startGame(BuildContext context, int? skillLevel) {
-    if (skillLevel == null) {
+    /* if (skillLevel == null) {
       // Analyze mode
       Navigator.of(context).push(MaterialPageRoute(
         builder: (_) => const GameScreen(skillLevel: null),
       ));
       return;
-    }
+    } */
 
     showDialog<PieceColor>(
       context: context,

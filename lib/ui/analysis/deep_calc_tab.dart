@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../game/xiangqi_model.dart';
 import '../../bloc/analysis_bloc.dart';
 import '../../engine/engine_ffi.dart';
 
@@ -33,6 +34,7 @@ class DeepCalcTab extends StatelessWidget {
             _PvChain(
               pvMoves: entry.value.pvMoves ?? [],
               translatedMoves: state.translatedPvs[entry.key] ?? [],
+              startingSide: state.sideToAnalyze,
               onTap: onPreviewMove,
             ),
             const SizedBox(height: 16),
@@ -78,11 +80,13 @@ class _PvHeader extends StatelessWidget {
 class _PvChain extends StatelessWidget {
   final List<String> pvMoves;
   final List<String> translatedMoves;
+  final PieceColor startingSide;
   final void Function(String) onTap;
 
   const _PvChain(
       {required this.pvMoves,
       required this.translatedMoves,
+      required this.startingSide,
       required this.onTap});
 
   @override
@@ -101,6 +105,7 @@ class _PvChain extends StatelessWidget {
             translatedMove:
                 i < translatedMoves.length ? translatedMoves[i] : null,
             ply: i,
+            startingSide: startingSide,
             onTap: () => onTap(displayMoves[i]),
           ),
           if (i < displayMoves.length - 1)
@@ -116,23 +121,25 @@ class _MoveButton extends StatelessWidget {
   final String move;
   final String? translatedMove;
   final int ply;
+  final PieceColor startingSide;
   final VoidCallback onTap;
 
   const _MoveButton(
       {required this.move,
       this.translatedMove,
       required this.ply,
+      required this.startingSide,
       required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     // Determine the color of this move based on starting side and ply
-    // We assume Red starts first if ply is even, unless we pass side context.
-    // For simplicity, let's use the colors: Red is CC3333, Black is 4A4A5A
-    final isRed = ply % 2 ==
-        0; // This is a simplification; ideally we know the board start side.
-    final color = isRed ? const Color(0xFFCC3333) : const Color(0xFF4A4A5A);
-    final label = isRed ? 'Đỏ' : 'Đen';
+    final isStaringRed = startingSide == PieceColor.red;
+    final isActuallyRed = isStaringRed ? (ply % 2 == 0) : (ply % 2 != 0);
+
+    final color =
+        isActuallyRed ? const Color(0xFFCC3333) : const Color(0xFF4A4A5A);
+    final label = isActuallyRed ? 'Đỏ' : 'Đen';
     final moveFrom = move.length >= 2 ? move.substring(0, 2) : '?';
     final moveTo = move.length >= 4 ? move.substring(2, 4) : '?';
 

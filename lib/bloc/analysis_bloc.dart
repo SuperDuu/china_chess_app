@@ -33,6 +33,7 @@ class AnalysisState {
   final PositionalAnalysis? positionAnalysis;
   final Map<int, EngineOutput> multiPvs;
   final Map<int, List<String>> translatedPvs;
+  final PieceColor sideToAnalyze;
   final String? pvExplanation;
 
   const AnalysisState({
@@ -45,6 +46,7 @@ class AnalysisState {
     this.positionAnalysis,
     this.multiPvs = const {},
     this.translatedPvs = const {},
+    this.sideToAnalyze = PieceColor.red,
     this.pvExplanation,
   });
 
@@ -58,6 +60,7 @@ class AnalysisState {
     PositionalAnalysis? positionAnalysis,
     Map<int, EngineOutput>? multiPvs,
     Map<int, List<String>>? translatedPvs,
+    PieceColor? sideToAnalyze,
     String? pvExplanation,
   }) =>
       AnalysisState(
@@ -70,6 +73,7 @@ class AnalysisState {
         positionAnalysis: positionAnalysis ?? this.positionAnalysis,
         multiPvs: multiPvs ?? this.multiPvs,
         translatedPvs: translatedPvs ?? this.translatedPvs,
+        sideToAnalyze: sideToAnalyze ?? this.sideToAnalyze,
         pvExplanation: pvExplanation ?? this.pvExplanation,
       );
 
@@ -241,6 +245,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
       positionAnalysis: posAnalysis,
       multiPvs: currentMultiPvs,
       translatedPvs: currentTranslatedPvs,
+      sideToAnalyze: currentPlayer,
       pvExplanation: pvExpl,
     ));
 
