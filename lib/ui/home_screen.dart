@@ -8,13 +8,17 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   void _startGame(BuildContext context, int? skillLevel) {
-    /* if (skillLevel == null) {
-      // Analyze mode
+    // If Training (Analysis) Mode, we don't need to specify player color
+    // because the user controls both sides.
+    if (skillLevel == null) {
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (_) => const GameScreen(skillLevel: null),
+        builder: (_) => const GameScreen(
+          skillLevel: null,
+          playerColor: null,
+        ),
       ));
       return;
-    } */
+    }
 
     showDialog<PieceColor>(
       context: context,
@@ -68,6 +72,28 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // App Logo
+            Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/app_logo.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
             const Text(
               'CỜ TƯỚNG',
               style: TextStyle(

@@ -35,9 +35,17 @@ class RequestGeminiAnalysisEvent extends AnalysisEvent {
 
 class DismissHintEvent extends AnalysisEvent {}
 
+class ResetAnalysisEvent extends AnalysisEvent {}
+
+class SetHumanColorEvent extends AnalysisEvent {
+  final PieceColor? color;
+  SetHumanColorEvent(this.color);
+}
+
 // ─── State ───────────────────────────────────────────────────────────────────
 
 class AnalysisState {
+  final XiangqiBoard board;
   final EngineOutput? latestOutput;
   final List<ThreatInfo> threats;
   final OpponentIntent? opponentIntent;
@@ -52,8 +60,11 @@ class AnalysisState {
   final String? geminiExplanation;
   final bool isGeminiLoading;
   final String? lastGeminiFen;
+  final Map<int, EngineOutput> pendingMultiPvs;
+  final PieceColor? humanColor;
 
-  const AnalysisState({
+  AnalysisState({
+    XiangqiBoard? board,
     this.latestOutput,
     this.threats = const [],
     this.opponentIntent,
@@ -68,10 +79,13 @@ class AnalysisState {
     this.geminiExplanation,
     this.isGeminiLoading = false,
     this.lastGeminiFen,
-  });
+    this.pendingMultiPvs = const {},
+    this.humanColor,
+  }) : board = board ?? XiangqiBoard.startingPosition();
 
   AnalysisState copyWith({
     EngineOutput? latestOutput,
+    XiangqiBoard? board,
     List<ThreatInfo>? threats,
     OpponentIntent? opponentIntent,
     bool? showingHint,
@@ -85,9 +99,13 @@ class AnalysisState {
     String? geminiExplanation,
     bool? isGeminiLoading,
     String? lastGeminiFen,
+    Map<int, EngineOutput>? pendingMultiPvs,
+    PieceColor? humanColor,
     bool clearGemini = false,
+    bool clearHumanColor = false,
   }) =>
       AnalysisState(
+        board: board ?? this.board,
         latestOutput: latestOutput ?? this.latestOutput,
         threats: threats ?? this.threats,
         opponentIntent: opponentIntent ?? this.opponentIntent,
@@ -104,6 +122,9 @@ class AnalysisState {
         isGeminiLoading: isGeminiLoading ?? this.isGeminiLoading,
         lastGeminiFen:
             clearGemini ? null : (lastGeminiFen ?? this.lastGeminiFen),
+        pendingMultiPvs:
+            pendingMultiPvs ?? (clearGemini ? {} : this.pendingMultiPvs),
+        humanColor: clearHumanColor ? null : (humanColor ?? this.humanColor),
       );
 
   /// Generates the explanation message.
@@ -165,11 +186,25 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
 
   AnalysisBloc({UcciController? controller})
       : _ctrl = controller ?? UcciController.instance,
-        super(const AnalysisState()) {
+        super(AnalysisState()) {
     on<UpdateAnalysisEvent>(_onUpdate);
     on<RequestHintEvent>(_onHint);
     on<RequestGeminiAnalysisEvent>(_onGeminiAnalysis);
     on<DismissHintEvent>(_onDismiss);
+    on<ResetAnalysisEvent>(_onReset);
+    on<SetHumanColorEvent>(_onSetHumanColor);
+  }
+
+  void _onReset(ResetAnalysisEvent e, Emitter<AnalysisState> emit) {
+    emit(state.copyWith(
+      clearGemini: true,
+      latestOutput: null,
+      multiPvs: {},
+      pendingMultiPvs: {},
+      translatedPvs: {},
+      showingHint: false,
+    ));
+    _lastAnalyzedFen = null;
   }
 
   String? _lastAnalyzedFen;
@@ -179,22 +214,23 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     final currentPlayer = e.board.sideToMove;
     final fen = e.board.toFen();
 
-    // 1) Clear multiPvs/translatedPvs if FEN changed
+    final fenChanged = _lastAnalyzedFen != fen;
+
+    // 1) Clear multiPvs if FEN changed
     final Map<int, EngineOutput> currentMultiPvs =
-        (_lastAnalyzedFen != fen) ? {} : Map.from(state.multiPvs);
+        fenChanged ? {} : Map.from(state.multiPvs);
     final Map<int, List<String>> currentTranslatedPvs =
-        (_lastAnalyzedFen != fen) ? {} : Map.from(state.translatedPvs);
+        fenChanged ? {} : Map.from(state.translatedPvs);
     _lastAnalyzedFen = fen;
 
-    if (output.multiPv != null) {
+    if (!output.isOpponentMode && output.multiPv != null) {
       currentMultiPvs[output.multiPv!] = output;
 
-      // Translate PV moves
+      // Translate visible PVs immediately for real-time arrows
       if (output.pvMoves != null) {
-        final moves = output.pvMoves!;
         final translated = <String>[];
         var tempBoard = e.board;
-        for (final m in moves.take(12)) {
+        for (final m in output.pvMoves!.take(12)) {
           translated.add(NotationTranslator.toVietnamese(m, tempBoard));
           tempBoard = tempBoard.applyMove(m);
         }
@@ -209,27 +245,27 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
 
     // Parse opponent intent if this is a bestmove line from opponent analysis
     OpponentIntent? intent;
-    if (output.isBestMove && output.bestMove != null) {
-      // However, we must ensure it matches the actual side to move.
-      if (currentPlayer == e.board.sideToMove) {
-        intent = AnalysisModel.parseOpponentIntent(
-          output.bestMove,
-          e.board,
-          currentPlayer == PieceColor.red ? PieceColor.black : PieceColor.red,
-        );
-      }
+    if (output.isOpponentMode && output.isBestMove && output.bestMove != null) {
+      // In opponent mode, we are analyzing the state AFTER our best move.
+      // So currentPlayer here is actually US (the side whose turn it was in the FEN we sent).
+      final opponent =
+          currentPlayer == PieceColor.red ? PieceColor.black : PieceColor.red;
+      intent = AnalysisModel.parseOpponentIntent(
+        output.bestMove,
+        e.board,
+        opponent,
+      );
     }
 
     // --- Positional analysis ---
     PositionalAnalysis? posAnalysis = state.positionAnalysis;
-    if (output.scoreCp != null) {
-      final materialScore = AnalysisModel.calculateMaterialScore(e.board);
-      // materialDiff from perspective of sideToMove
-      final diff =
-          currentPlayer == PieceColor.red ? materialScore : -materialScore;
+    // Only update positional analysis for main analysis, not opponent mode
+    if (!output.isOpponentMode && output.scoreCp != null) {
+      final materialScore =
+          AnalysisModel.calculateMaterialScore(e.board, currentPlayer);
       final engineScore = output.scoreCp!;
       // Positional bonus is how much engine likes the position BEYOND mere material
-      final posBonus = engineScore - diff;
+      final posBonus = engineScore - materialScore;
 
       // Has the material dropped, but engine score stayed strong (meaning positional bonus spiked)?
       bool isSacrifice = false;
@@ -237,13 +273,13 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
         final prevMat = state.positionAnalysis!.materialDiff;
         final prevBonus = state.positionAnalysis!.positionalBonus;
         // Sacrificed material but gained positional compensation
-        if (diff < prevMat && posBonus > prevBonus + 100) {
+        if (materialScore < prevMat && posBonus > prevBonus + 100) {
           isSacrifice = true;
         }
       }
 
       posAnalysis = PositionalAnalysis(
-        materialDiff: diff,
+        materialDiff: materialScore,
         engineScore: engineScore,
         positionalBonus: posBonus,
         isSacrifice: isSacrifice,
@@ -252,7 +288,9 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     }
 
     String? pvExpl;
-    if (output.pvMoves != null &&
+    // Only update explanation for main analysis
+    if (!output.isOpponentMode &&
+        output.pvMoves != null &&
         output.pvMoves!.length >= 4 &&
         output.scoreCp != null) {
       // Simulate PV moves to translate them accurately
@@ -263,11 +301,13 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
         translatedMoves.add(NotationTranslator.toVietnamese(m, tempBoard));
         tempBoard = tempBoard.applyMove(m);
       }
+      final sideName = currentPlayer == PieceColor.red ? 'Đỏ' : 'Đen';
       pvExpl =
-          'Vũ Đức Du Mentor: Nước đi này tối ưu vì nó trực tiếp uy hiếp quân mạnh nhất của đối phương sau ${moves.length} nhịp.';
+          'Vũ Đức Du Mentor ($sideName): Nước đi này tối ưu vì nó trực tiếp uy hiếp quân mạnh nhất của đối phương sau ${moves.length} nhịp.';
     }
 
     emit(state.copyWith(
+      board: e.board,
       latestOutput: output,
       threats: threats,
       opponentIntent: intent ?? state.opponentIntent,
@@ -275,25 +315,32 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
           output.isBestMove ? output.bestMove : state.opponentBestMove,
       positionAnalysis: posAnalysis,
       multiPvs: currentMultiPvs,
+      pendingMultiPvs: const {}, // No longer using pending system
       translatedPvs: currentTranslatedPvs,
       sideToAnalyze: currentPlayer,
       pvExplanation: pvExpl,
-      clearGemini: fen != state.lastGeminiFen, // Clear if FEN changed
+      clearGemini: fenChanged, // Clear if FEN changed
     ));
 
     // If score dropped significantly, also run opponent intent analysis
-    if (output.isBestMove && output.bestMove != null && scoreDrop < -150) {
+    // ONLY trigger this from main analysis (NOT when already in opponent mode)
+    if (!output.isOpponentMode &&
+        output.isBestMove &&
+        output.bestMove != null &&
+        scoreDrop < -150) {
       // The engine just found a bestmove for us; now get opponent response
-      final enemyFen = _flipFen(output, e.board);
-      // 5) Trigger opponent intent analysis (ONLY if it's a new position)
-      if (enemyFen != null && enemyFen != _lastAnalyzedFen) {
-        _lastAnalyzedFen = enemyFen;
+      final nextBoard = e.board.applyMove(output.bestMove!);
+      final enemyFen = nextBoard.toFen();
+      // 5) Trigger opponent intent analysis
+      if (enemyFen != _lastAnalyzedFen) {
         _ctrl.analyzeOpponent(enemyFen);
       }
     }
   }
 
   void _onHint(RequestHintEvent e, Emitter<AnalysisState> emit) {
+    if (e.board.sideToMove != state.sideToAnalyze) return;
+
     final q =
         _selectHintQuestion(e.board, state.threats, state.positionAnalysis);
     emit(state.copyWith(showingHint: true, hintQuestion: q));
@@ -305,38 +352,54 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
 
   Future<void> _onGeminiAnalysis(
       RequestGeminiAnalysisEvent e, Emitter<AnalysisState> emit) async {
+    // Side check: logic in UI handles this but safe to check here
     if (state.isGeminiLoading) return;
     // Cache check: if we already have the explanation for this position
     if (e.fen == state.lastGeminiFen && state.geminiExplanation != null) return;
 
     emit(state.copyWith(isGeminiLoading: true, clearGemini: true));
 
-    final result = await _gemini.analyzePosition(
-      fen: e.fen,
-      score: e.score,
-      bestMove: e.bestMove,
-      pvMoves: e.pvMoves,
-    );
+    final isCheck = state.board.isCheck(state.sideToAnalyze);
+    final isMate = state.latestOutput?.isMate ?? false;
 
-    emit(state.copyWith(
-      isGeminiLoading: false,
-      geminiExplanation: result,
-      lastGeminiFen: e.fen,
-    ));
+    try {
+      final stream = _gemini.analyzePositionStream(
+        fen: e.fen,
+        score: e.score,
+        bestMove: e.bestMove,
+        pvMoves: e.pvMoves,
+        playerPerspective: state.humanColor ?? state.sideToAnalyze,
+        isCheck: isCheck,
+        isMate: isMate,
+      );
+
+      bool firstChunk = true;
+      await for (final text in stream.timeout(const Duration(seconds: 30))) {
+        if (firstChunk) {
+          // Once we have the first bit of text, we can stop the overall loading indicator
+          // although we might still be streaming.
+          emit(state.copyWith(
+            isGeminiLoading: false,
+            geminiExplanation: text,
+            lastGeminiFen: e.fen,
+          ));
+          firstChunk = false;
+        } else {
+          emit(state.copyWith(
+            geminiExplanation: text,
+          ));
+        }
+      }
+    } catch (err) {
+      emit(state.copyWith(
+        isGeminiLoading: false,
+        geminiExplanation: 'Lỗi phân tích: $err',
+      ));
+    }
   }
 
-  String? _flipFen(EngineOutput o, XiangqiBoard b) {
-    if (o.bestMove == null) return null;
-
-    // Flip side to move to see what the opponent would do
-    final fen = b.toFen(); // Current position
-    final parts = fen.split(' ');
-    if (parts.length < 2) return null;
-
-    final boardPart = parts[0];
-    final side = parts[1] == 'w' ? 'b' : 'w';
-
-    return '$boardPart $side';
+  void _onSetHumanColor(SetHumanColorEvent e, Emitter<AnalysisState> emit) {
+    emit(state.copyWith(humanColor: e.color, clearHumanColor: e.color == null));
   }
 
   String _analyzeTempo(XiangqiBoard board, PieceColor currentPlayer) {

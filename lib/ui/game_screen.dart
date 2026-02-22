@@ -33,15 +33,19 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   void _initGame() {
-    final startColor = widget.playerColor ?? PieceColor.red;
-    context.read<GameBloc>().add(ResetGameEvent(startingSide: startColor));
-    _triggerAnalysis(XiangqiBoard.startingPosition(sideToMove: startColor));
+    // In Chinese Chess, Red always moves first.
+    context.read<GameBloc>().add(ResetGameEvent(startingSide: PieceColor.red));
+
+    // Also tell AnalysisBloc who the human is
+    context.read<AnalysisBloc>().add(SetHumanColorEvent(widget.playerColor));
+
+    _triggerAnalysis(XiangqiBoard.startingPosition(sideToMove: PieceColor.red));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0A15),
+      backgroundColor: const Color(0xFFF5F5DC), // Light beige
       appBar: _buildAppBar(context),
       body: BlocListener<EngineBloc, EngineState>(
         listener: (ctx, es) {
@@ -69,6 +73,7 @@ class _GameScreenState extends State<GameScreen> {
                 board.sideToMove != widget.playerColor &&
                 output.isBestMove &&
                 output.bestMove != null) {
+              ctx.read<AnalysisBloc>().add(ResetAnalysisEvent());
               ctx.read<GameBloc>().add(MakeMoveEvent(output.bestMove!));
 
               Future.delayed(const Duration(milliseconds: 300), () {
@@ -94,6 +99,7 @@ class _GameScreenState extends State<GameScreen> {
                     builder: (ctx, analysisState) => BoardWidget(
                       gameState: gameState,
                       analysisState: analysisState,
+                      flipped: widget.playerColor == PieceColor.black,
                       onTap: (pos) => _handleBoardTap(ctx, pos, gameState),
                     ),
                   ),
@@ -192,6 +198,7 @@ class _GameScreenState extends State<GameScreen> {
                     icon: Icons.undo_rounded,
                     label: 'Hoàn',
                     onTap: () {
+                      context.read<AnalysisBloc>().add(ResetAnalysisEvent());
                       context.read<GameBloc>().add(UndoMoveEvent());
                       Future.delayed(const Duration(milliseconds: 50), () {
                         if (!context.mounted) return;
@@ -230,10 +237,10 @@ class _GameScreenState extends State<GameScreen> {
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color(0xFF0D0D20),
-      elevation: 0,
+      backgroundColor: const Color(0xFF8B4513), // Brown
+      elevation: 2,
       centerTitle: false,
-      title: const Row(
+      title: Row(
         children: [
           Text(
             '象棋',
@@ -248,7 +255,7 @@ class _GameScreenState extends State<GameScreen> {
           Text(
             'Vũ Đức Du',
             style: TextStyle(
-              color: Color(0xFF888AAA),
+              color: Colors.white.withOpacity(0.7),
               fontSize: 14,
               fontStyle: FontStyle.italic,
               letterSpacing: 0.5,
@@ -256,6 +263,7 @@ class _GameScreenState extends State<GameScreen> {
           ),
         ],
       ),
+      iconTheme: const IconThemeData(color: Colors.white),
       actions: [
         BlocBuilder<EngineBloc, EngineState>(
           builder: (ctx, state) => IconButton(
@@ -263,7 +271,7 @@ class _GameScreenState extends State<GameScreen> {
               Icons.analytics_rounded,
               color: state is EngineReady || state is EngineAnalyzingState
                   ? const Color(0xFF4CAF50)
-                  : const Color(0xFF3A3A5A),
+                  : Colors.white.withOpacity(0.3),
             ),
             onPressed: state is EngineReady
                 ? () {
@@ -301,6 +309,7 @@ class _GameScreenState extends State<GameScreen> {
       // Attempt a move
       if (gameState.validMoves.contains(pos)) {
         final move = '${selected.toUcci()}${pos.toUcci()}';
+        ctx.read<AnalysisBloc>().add(ResetAnalysisEvent());
         ctx.read<GameBloc>().add(MakeMoveEvent(move));
 
         // Trigger engine analysis after move

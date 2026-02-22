@@ -10,7 +10,7 @@ class TypewriterText extends StatefulWidget {
     super.key,
     required this.text,
     this.style,
-    this.durationPerChar = const Duration(milliseconds: 30),
+    this.durationPerChar = const Duration(milliseconds: 5),
   });
 
   @override

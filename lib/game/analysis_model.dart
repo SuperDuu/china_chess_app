@@ -76,7 +76,14 @@ class AnalysisModel {
     }
 
     result.sort((a, b) {
+      // 1. Prioritize King threats above ALL else
+      if (a.threatenedPiece.type == PieceType.king) return -1;
+      if (b.threatenedPiece.type == PieceType.king) return 1;
+
+      // 2. Prioritize unprotected pieces
       if (a.isUnprotected != b.isUnprotected) return a.isUnprotected ? -1 : 1;
+
+      // 3. Prioritize by piece value
       return _pieceValue(b.threatenedPiece.type)
           .compareTo(_pieceValue(a.threatenedPiece.type));
     });
@@ -119,13 +126,17 @@ class AnalysisModel {
         PieceType.king => 9999,
       };
 
-  /// Calculates the raw material score from the perspective of Red.
-  /// (Red pieces - Black pieces).
-  static int calculateMaterialScore(XiangqiBoard board) {
+  /// Calculates the raw material score from the perspective of [perspective].
+  static int calculateMaterialScore(
+      XiangqiBoard board, PieceColor perspective) {
     int score = 0;
     for (final p in board.pieces) {
       final val = _pieceValue(p.type);
-      score += p.color == PieceColor.red ? val : -val;
+      if (p.color == perspective) {
+        score += val;
+      } else {
+        score -= val;
+      }
     }
     return score;
   }

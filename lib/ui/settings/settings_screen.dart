@@ -67,8 +67,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   const SizedBox(height: 16),
                   TextField(
                     controller: _apiKeyController,
+                    style: const TextStyle(
+                        color: Color(0xFF8B4513)), // Fix invisible text
+                    cursorColor: const Color(0xFF8B4513),
                     decoration: InputDecoration(
                       hintText: 'Nhập API Key của bạn...',
+                      hintStyle: TextStyle(
+                          color: const Color(0xFF8B4513).withOpacity(0.5)),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(

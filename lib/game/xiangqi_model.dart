@@ -28,13 +28,18 @@ class BoardPos {
   static BoardPos? fromUcci(String s) {
     if (s.length < 2) return null;
     final col = s.codeUnitAt(0) - 'a'.codeUnitAt(0);
-    final row = int.tryParse(s[1]);
-    if (row == null) return null;
+    final ucciRow = int.tryParse(s[1]);
+    if (ucciRow == null) return null;
+    // UCCI: 0 is bottom, 9 is top. Internal: 0 is top, 9 is bottom.
+    final row = 9 - ucciRow;
     return BoardPos(col, row);
   }
 
   /// Convert to UCCI string: col→a-i, row→0-9
-  String toUcci() => '${'abcdefghi'[col]}$row';
+  String toUcci() {
+    final ucciRow = 9 - row;
+    return '${'abcdefghi'[col]}$ucciRow';
+  }
 }
 
 /// A single chess piece.

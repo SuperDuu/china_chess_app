@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../bloc/analysis_bloc.dart';
+import '../../game/xiangqi_model.dart';
 import '../components/typewriter_text.dart';
 
 class MentorPanel extends StatelessWidget {
@@ -16,7 +17,7 @@ class MentorPanel extends StatelessWidget {
         }
 
         if (state.geminiExplanation != null) {
-          return _buildContent(state.geminiExplanation!);
+          return _buildContent(state.geminiExplanation!, state);
         }
 
         return const SizedBox.shrink();
@@ -26,12 +27,22 @@ class MentorPanel extends StatelessWidget {
 
   Widget _buildLoadingState() {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF8DC),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFFE8B923).withOpacity(0.5)),
+        color: const Color(0xFFFFF8DC).withOpacity(0.95), // Cornsilk
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: const Color(0xFF8B4513).withOpacity(0.4),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +98,7 @@ class MentorPanel extends StatelessWidget {
     );
   }
 
-  Widget _buildContent(String text) {
+  Widget _buildContent(String text, AnalysisState state) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: const EdgeInsets.all(16),
@@ -106,15 +117,34 @@ class MentorPanel extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          Row(
             children: [
-              Icon(Icons.auto_awesome, color: Color(0xFFE8B923), size: 20),
-              SizedBox(width: 8),
-              Text(
+              const Icon(Icons.auto_awesome,
+                  color: Color(0xFFE8B923), size: 20),
+              const SizedBox(width: 8),
+              const Text(
                 'Cố vấn Vũ Đức Du',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF8B4513),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: state.sideToAnalyze == PieceColor.red
+                      ? const Color(0xFFCC3333)
+                      : const Color(0xFF2F4F4F),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Text(
+                  state.sideToAnalyze == PieceColor.red ? 'ĐỎ' : 'ĐEN',
+                  style: const TextStyle(
+                    fontSize: 10,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],

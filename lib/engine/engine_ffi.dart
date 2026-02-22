@@ -31,6 +31,7 @@ class EngineOutput {
   final String? bestMove;
   final int? nps;
   final int? multiPv;
+  final bool isOpponentMode;
 
   const EngineOutput({
     required this.raw,
@@ -42,6 +43,7 @@ class EngineOutput {
     this.bestMove,
     this.nps,
     this.multiPv,
+    this.isOpponentMode = false,
   });
 
   bool get isInfo =>
@@ -95,8 +97,22 @@ class EngineOutput {
       pvMoves: pvMoves,
       nps: nps,
       multiPv: multiPv,
+      // isOpponentMode will be set by the controller using copyWith
     );
   }
+
+  EngineOutput copyWith({bool? isOpponentMode}) => EngineOutput(
+        raw: raw,
+        depth: depth,
+        scoreCp: scoreCp,
+        isMate: isMate,
+        mateIn: mateIn,
+        pvMoves: pvMoves,
+        bestMove: bestMove,
+        nps: nps,
+        multiPv: multiPv,
+        isOpponentMode: isOpponentMode ?? this.isOpponentMode,
+      );
 
   @override
   String toString() => raw;

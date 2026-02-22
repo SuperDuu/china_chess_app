@@ -10,12 +10,14 @@ class BoardWidget extends StatelessWidget {
   final GameState gameState;
   final AnalysisState analysisState;
   final void Function(BoardPos) onTap;
+  final bool flipped;
 
   const BoardWidget({
     super.key,
     required this.gameState,
     required this.analysisState,
     required this.onTap,
+    this.flipped = false,
   });
 
   @override
@@ -33,6 +35,7 @@ class BoardWidget extends StatelessWidget {
               painter: _BoardPainter(
                 gameState: gameState,
                 analysisState: analysisState,
+                flipped: flipped,
               ),
             ),
           );
@@ -44,8 +47,14 @@ class BoardWidget extends StatelessWidget {
   void _handleTap(Offset localPos, Size size) {
     final cellW = size.width / 9;
     final cellH = size.height / 10;
-    final col = (localPos.dx / cellW).floor().clamp(0, 8);
-    final row = (localPos.dy / cellH).floor().clamp(0, 9);
+    int col = (localPos.dx / cellW).floor().clamp(0, 8);
+    int row = (localPos.dy / cellH).floor().clamp(0, 9);
+
+    if (flipped) {
+      col = 8 - col;
+      row = 9 - row;
+    }
+
     onTap(BoardPos(col, row));
   }
 }
@@ -53,8 +62,13 @@ class BoardWidget extends StatelessWidget {
 class _BoardPainter extends CustomPainter {
   final GameState gameState;
   final AnalysisState analysisState;
+  final bool flipped;
 
-  _BoardPainter({required this.gameState, required this.analysisState});
+  _BoardPainter({
+    required this.gameState,
+    required this.analysisState,
+    required this.flipped,
+  });
 
   static const _gold = Color(0xFF8B4513); // Changed to Brown for light theme
   static const _boardBg = Color(0xFFF5DEB3); // Wheat
@@ -83,28 +97,30 @@ class _BoardPainter extends CustomPainter {
       fontWeight: FontWeight.bold,
     );
 
-    // Bottom numbers 1-9 (Red perspective)
+    // Bottom numbers
     for (int c = 0; c <= 8; c++) {
       final x = c * cw + cw / 2;
-      final y = size.height - 10;
-      final text = (9 - c).toString();
+      final y = size.height - 12;
+      // If flipped: Black at bottom -> 1 to 9 (left to right)
+      // If not flipped: Red at bottom -> 9 to 1 (right to left)
+      final text = flipped ? (c + 1).toString() : (9 - c).toString();
       _drawText(canvas, text, Offset(x, y),
           fontSize: textStyle.fontSize!,
           color: textStyle.color!,
           fontWeight: FontWeight.bold);
     }
 
-    // Side letters a-i (0-9 rows)
-    final letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
-    for (int r = 0; r <= 9; r++) {
-      final x = 12.0; // Pushed slightly right for better alignment
-      final y = r * ch + ch / 2;
-      if (r < letters.length) {
-        _drawText(canvas, letters[r], Offset(x, y),
-            fontSize: textStyle.fontSize!,
-            color: textStyle.color!,
-            fontWeight: FontWeight.bold);
-      }
+    // Top numbers
+    for (int c = 0; c <= 8; c++) {
+      final x = c * cw + cw / 2;
+      final y = 12.0;
+      // If flipped: Red at top -> 9 to 1 (right to left)
+      // If not flipped: Black at top -> 1 to 9 (left to right)
+      final text = flipped ? (9 - c).toString() : (c + 1).toString();
+      _drawText(canvas, text, Offset(x, y),
+          fontSize: textStyle.fontSize!,
+          color: textStyle.color!,
+          fontWeight: FontWeight.bold);
     }
   }
 
@@ -203,14 +219,12 @@ class _BoardPainter extends CustomPainter {
         ..color = _gold.withOpacity(0.2)
         ..style = PaintingStyle.fill;
       if (from != null) {
-        canvas.drawCircle(
-            Offset(from.col * cw + cw / 2, from.row * ch + ch / 2),
-            cw * 0.45,
-            hlPaint);
+        final p = _getPosOffset(from, cw, ch);
+        canvas.drawCircle(p, cw * 0.45, hlPaint);
       }
       if (to != null) {
-        canvas.drawCircle(Offset(to.col * cw + cw / 2, to.row * ch + ch / 2),
-            cw * 0.45, hlPaint);
+        final p = _getPosOffset(to, cw, ch);
+        canvas.drawCircle(p, cw * 0.45, hlPaint);
       }
     }
 
@@ -220,8 +234,8 @@ class _BoardPainter extends CustomPainter {
       final selPaint = Paint()
         ..color = _gold.withOpacity(0.2)
         ..style = PaintingStyle.fill;
-      canvas.drawCircle(Offset(sp.col * cw + cw / 2, sp.row * ch + ch / 2),
-          cw * 0.45, selPaint);
+      final p = _getPosOffset(sp, cw, ch);
+      canvas.drawCircle(p, cw * 0.45, selPaint);
     }
 
     // Valid moves highlight
@@ -229,35 +243,32 @@ class _BoardPainter extends CustomPainter {
       ..color = _gold.withOpacity(0.4)
       ..style = PaintingStyle.fill;
     for (final move in gameState.validMoves) {
-      canvas.drawCircle(Offset(move.col * cw + cw / 2, move.row * ch + ch / 2),
-          cw * 0.1, dotPaint);
+      final p = _getPosOffset(move, cw, ch);
+      canvas.drawCircle(p, cw * 0.1, dotPaint);
     }
 
     // --- NEON GLOW BESTMOVE SUGGESTION ---
     if (analysisState.showingHint &&
-        analysisState.latestOutput?.bestMove != null) {
+        analysisState.latestOutput?.bestMove != null &&
+        !analysisState.latestOutput!.isOpponentMode) {
       final move = analysisState.latestOutput!.bestMove!;
       if (move.length >= 4) {
         final from = BoardPos.fromUcci(move.substring(0, 2));
-        if (from != null) {
-          final cx = from.col * cw + cw / 2;
-          final cy = from.row * ch + ch / 2;
+        final to = BoardPos.fromUcci(move.substring(2, 4));
 
-          // Outer Neon Glow
-          final neonPaint = Paint()
-            ..color = const Color(0xFFE8B923) // Yellow Gold
-            ..maskFilter = const MaskFilter.blur(BlurStyle.outer, 10)
-            ..strokeWidth = 4.0;
+        _drawNeonCheck(canvas, from, cw, ch, const Color(0xFFE8B923));
+        _drawNeonCheck(canvas, to, cw, ch, const Color(0xFFE8B923));
+      }
+    }
 
-          canvas.drawCircle(Offset(cx, cy), cw * 0.45, neonPaint);
-
-          // Pulse/Inner glow
-          final brightPaint = Paint()
-            ..color = const Color(0xFFFFD700).withOpacity(0.6)
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 3.0;
-          canvas.drawCircle(Offset(cx, cy), cw * 0.45, brightPaint);
-        }
+    // --- KING CHECK WARNING ---
+    for (final color in PieceColor.values) {
+      if (gameState.board.isCheck(color)) {
+        final king = gameState.board.pieces.firstWhere(
+            (p) => p.type == PieceType.king && p.color == color,
+            orElse: () => gameState.board.pieces.first);
+        _drawNeonCheck(canvas, king.position, cw, ch, const Color(0xFFFF4444),
+            pulse: true);
       }
     }
 
@@ -265,27 +276,50 @@ class _BoardPainter extends CustomPainter {
     if (gameState.previewMove != null && gameState.previewMove!.length >= 4) {
       final to = BoardPos.fromUcci(gameState.previewMove!.substring(2, 4));
       if (to != null) {
-        // Special highlighting if it's considered an excellent positional sacrifice
         final isSacrifice = gameState.positionAnalysis?.isSacrifice == true;
 
         final pvPaint = Paint()
           ..color = (isSacrifice ? const Color(0xFFFF4444) : Colors.cyan)
               .withOpacity(0.2)
           ..style = PaintingStyle.fill;
-        final cx = to.col * cw + cw / 2;
-        final cy = to.row * ch + ch / 2;
-        canvas.drawCircle(Offset(cx, cy), cw * 0.45, pvPaint);
+        final p = _getPosOffset(to, cw, ch);
+        canvas.drawCircle(p, cw * 0.45, pvPaint);
 
         if (isSacrifice) {
-          // Draw an imposing red border to denote a critical sacrifice
           final sacBorder = Paint()
             ..color = const Color(0xFFFF4444)
             ..strokeWidth = 2.0
             ..style = PaintingStyle.stroke;
-          canvas.drawCircle(Offset(cx, cy), cw * 0.5, sacBorder);
+          canvas.drawCircle(p, cw * 0.5, sacBorder);
         }
       }
     }
+  }
+
+  Offset _getPosOffset(BoardPos pos, double cw, double ch) {
+    int col = flipped ? 8 - pos.col : pos.col;
+    int row = flipped ? 9 - pos.row : pos.row;
+    return Offset(col * cw + cw / 2, row * ch + ch / 2);
+  }
+
+  void _drawNeonCheck(
+      Canvas canvas, BoardPos? pos, double cw, double ch, Color color,
+      {bool pulse = false}) {
+    if (pos == null) return;
+    final p = _getPosOffset(pos, cw, ch);
+
+    // Outer Neon Glow
+    final neonPaint = Paint()
+      ..color = color
+      ..maskFilter = const MaskFilter.blur(BlurStyle.outer, 15)
+      ..strokeWidth = 6.0;
+    canvas.drawCircle(p, cw * 0.45, neonPaint);
+
+    final brightPaint = Paint()
+      ..color = color.withOpacity(0.4)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.0;
+    canvas.drawCircle(p, cw * 0.45, brightPaint);
   }
 
   void _drawSuggestionArrows(Canvas canvas, double cw, double ch) {
@@ -296,7 +330,7 @@ class _BoardPainter extends CustomPainter {
       ..sort((a, b) => a.key.compareTo(b.key));
 
     for (var entry in sortedPvs.take(4)) {
-      final index = entry.key; // 1-indexed
+      final index = entry.key; // 1-indexed (Rank 1 = Blue, Rank 2-4 = Red)
       final output = entry.value;
       if (output.pvMoves == null || output.pvMoves!.isEmpty) continue;
 
@@ -308,13 +342,13 @@ class _BoardPainter extends CustomPainter {
 
       final color = index == 1 ? Colors.blue : Colors.red;
       final paint = Paint()
-        ..color = color.withOpacity(0.7)
-        ..strokeWidth = index == 1 ? 4.0 : 2.5
+        ..color = color.withOpacity(0.8)
+        ..strokeWidth = index == 1 ? 5.0 : 3.0
         ..style = PaintingStyle.stroke
         ..strokeCap = StrokeCap.round;
 
-      final p1 = Offset(from.col * cw + cw / 2, from.row * ch + ch / 2);
-      final p2 = Offset(to.col * cw + cw / 2, to.row * ch + ch / 2);
+      final p1 = _getPosOffset(from, cw, ch);
+      final p2 = _getPosOffset(to, cw, ch);
 
       _drawArrow(canvas, p1, p2, paint, cw);
     }
@@ -353,10 +387,8 @@ class _BoardPainter extends CustomPainter {
 
   void _drawPieces(Canvas canvas, double cw, double ch) {
     for (final piece in gameState.board.pieces) {
-      final cx = piece.position.col * cw + cw / 2;
-      final cy = piece.position.row * ch + ch / 2;
-      final radius = cw * 0.42;
-      _drawPiece(canvas, piece, Offset(cx, cy), radius);
+      final p = _getPosOffset(piece.position, cw, ch);
+      _drawPiece(canvas, piece, p, cw * 0.42);
     }
   }
 
@@ -422,5 +454,6 @@ class _BoardPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_BoardPainter old) => old.gameState != gameState;
+  bool shouldRepaint(_BoardPainter old) =>
+      old.gameState != gameState || old.analysisState != analysisState;
 }

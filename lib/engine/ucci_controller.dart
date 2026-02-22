@@ -26,6 +26,7 @@ class UcciController {
   final _process = PikafishProcess();
   int _lastScore = 0;
   int get lastScore => _lastScore;
+  bool _isOpponentMode = false;
 
   /// Full initialization.
   Future<void> initialize() async {
@@ -49,7 +50,7 @@ class UcciController {
       // ignore: avoid_print
       print('[Engine Output] ${out.raw}');
       if (out.scoreCp != null) _lastScore = out.scoreCp!;
-      _outputCtrl.add(out);
+      _outputCtrl.add(out.copyWith(isOpponentMode: _isOpponentMode));
     });
 
     // 5) UCI/UCCI handshake
@@ -100,17 +101,18 @@ class UcciController {
           {int seconds = 15}) =>
       outputStream.where(predicate).first.timeout(Duration(seconds: seconds));
 
-  /// Analyze current position at given FEN.
   Future<void> analyzePosition(String fen,
       {int depth = 22, int movetime = 5000}) async {
     if (_state == EngineRunState.analyzing) stopAnalysis();
     _state = EngineRunState.analyzing;
+    _isOpponentMode = false;
     _send('position fen $fen');
     _send('go depth $depth movetime $movetime');
   }
 
   /// Quick opponent analysis (e.g. 2 seconds).
   void analyzeOpponent(String fen, {int movetime = 2000}) {
+    _isOpponentMode = true;
     _send('position fen $fen');
     _send('go movetime $movetime');
   }

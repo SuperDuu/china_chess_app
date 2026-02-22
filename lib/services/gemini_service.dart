@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../game/xiangqi_model.dart';
 
 class GeminiService {
   static const String _defaultApiKey =
@@ -10,7 +12,8 @@ class GeminiService {
     final apiKey = prefs.getString('gemini_api_key') ?? _defaultApiKey;
 
     return GenerativeModel(
-      model: 'gemini-1.5-flash',
+      model:
+          'gemini-3-flash-preview', // Updated to gemini-3-flash-preview as per user request
       apiKey: apiKey,
       safetySettings: [
         SafetySetting(HarmCategory.harassment, HarmBlockThreshold.none),
@@ -21,40 +24,71 @@ class GeminiService {
     );
   }
 
-  Future<String> analyzePosition({
+  Stream<String> analyzePositionStream({
     required String fen,
     required int score,
     required String bestMove,
     required List<String> pvMoves,
-  }) async {
+    required PieceColor playerPerspective,
+    bool isCheck = false,
+    bool isMate = false,
+  }) async* {
     final pvList = pvMoves.join(', ');
-    final side = fen.contains(' w') ? 'Đỏ' : 'Đen';
+    final sideToMove = fen.contains(' w') ? PieceColor.red : PieceColor.black;
+    final sideName = sideToMove == PieceColor.red ? 'Đỏ' : 'Đen';
+    final isAnalysisForPlayer = sideToMove == playerPerspective;
 
     final prompt = '''
-Bạn là Vũ Đức Du Mentor. Dựa trên chuỗi PV 4 nước tiếp theo từ Engine, hãy giải thích nước đi:
+Bạn là Vũ Đức Du Mentor. Bạn đang phân tích CẬN KỀ và CHI TIẾT cho phe $sideName.
+${isAnalysisForPlayer ? "Đối tượng bạn đang khuyên là NGƯỜI CHƠI." : "Đối tượng bạn đang cảnh báo là về THÂM Ý ĐỐI THỦ."}
+${isCheck ? "⚠️ LƯU Ý: Phe $sideName đang bị CHIẾU TƯỚNG!" : ""}
+${isMate ? "💀 CẢNH BÁO: Hình cờ này sắp SÁT CỤC (MATE)!" : ""}
 
 Dữ liệu:
 - Hình cờ (FEN): $fen
-- Side: $side
 - Score: $score
 - Bestmove: $bestMove
 - Chuỗi PV: $pvList
 
-Yêu cầu (NGHIÊM NGẶT):
-1. Độ dài: Đúng 100 chữ, không rườm rà.
-2. Ưu điểm: Giải thích logic chiếm lộ, tạo thế công hoặc thủ trong 4 nhịp tới.
-3. Nhược điểm: PHẢI CHỈ RÕ rủi ro tiềm ẩn (ví dụ: hở sườn, mất ưu thế cánh, hoặc tạo cơ hội phản công cho địch).
-4. Vì sao đáng đi: Chốt hạ lý do nước này vẫn tối ưu nhất bất chấp nhược điểm.
-5. Tính trung thực: Không bịa đặt, nói thật lòng dựa trên số liệu Engine.
+Yêu cầu (CHUYÊN SÂU):
+1. Độ dài: Khoảng 300 ký tự (phân tích kỹ hơn).
+2. Logic: ${isAnalysisForPlayer ? "Chỉ rõ tại sao nước này giúp Người chơi ưu thế về mặt chiến thuật (chiếm lộ, bắt quân, hay tạo thế)." : "Vạch trần âm mưu hiểm hóc của đối thủ và cách nó phá vỡ thế trận của bạn."}
+3. Triển vọng: Dự đoán 2-3 nhịp tiếp theo dựa trên chuỗi PV.
+4. Chốt hạ: Khẳng định lý do đây là nước đi "sát sườn" nhất hiện tại.
 ''';
 
     try {
+      try {
+        final result = await InternetAddress.lookup('google.com')
+            .timeout(const Duration(seconds: 10));
+        if (result.isEmpty || result[0].rawAddress.isEmpty) {
+          yield 'Cố vấn đang tạm vắng (Mất kết nối Internet).';
+          return;
+        }
+      } catch (_) {
+        yield 'Cố vấn đang tạm vắng (Mất kết nối Internet).';
+        return;
+      }
+
       final model = await _getModel();
       final content = [Content.text(prompt)];
-      final response = await model.generateContent(content);
-      return response.text ?? 'Kỳ hữu thông cảm, tôi đang suy ngẫm chưa ra...';
+      final responses = model.generateContentStream(content);
+
+      String accumulatedText = '';
+      await for (final response in responses) {
+        final chunk = response.text;
+        if (chunk != null) {
+          accumulatedText += chunk;
+          yield accumulatedText;
+        }
+      }
     } catch (e) {
-      return 'Lỗi kết nối kỳ đài (Hãy kiểm tra API Key): $e';
+      if (e.toString().contains('403') ||
+          e.toString().contains('PERMISSION_DENIED')) {
+        yield 'Lỗi 403: API Key bị rò rỉ hoặc không hợp lệ. Vui lòng cập nhật Key mới.';
+      } else {
+        yield 'Lỗi kết nối kỳ đài: $e';
+      }
     }
   }
 }
