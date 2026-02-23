@@ -13,10 +13,11 @@ class SoundManager {
     // and to handle modern Android (14/15/16) audio policies.
     AudioPlayer.global.setAudioContext(AudioContext(
       android: const AudioContextAndroid(
+        isSpeakerphoneOn: false,
         stayAwake: false,
         contentType: AndroidContentType.sonification,
         usageType: AndroidUsageType.assistanceSonification,
-        audioFocus: AndroidAudioFocus.gainTransientMayDuck,
+        audioFocus: AndroidAudioFocus.gainTransient,
       ),
       iOS: AudioContextIOS(
         category: AVAudioSessionCategory.ambient,

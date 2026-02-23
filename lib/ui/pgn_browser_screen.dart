@@ -233,93 +233,33 @@ class _PgnBrowserScreenState extends State<PgnBrowserScreen> {
               const SizedBox(height: 8),
               BlocBuilder<AnalysisBloc, AnalysisState>(
                 builder: (context, state) {
-                  final score = state.latestOutput?.scoreCp ?? 0;
-                  final scoreText = (score / 100.0).toStringAsFixed(2);
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(Icons.analytics,
-                          size: 16, color: Color(0xFF8B4513)),
-                      const SizedBox(width: 4),
-                      Text('Đánh giá: $scoreText',
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF8B4513))),
-                      const Spacer(),
-                      TextButton.icon(
-                        icon: state.isGeminiLoading
-                            ? const SizedBox(
-                                width: 14,
-                                height: 14,
-                                child: CircularProgressIndicator(
-                                    strokeWidth: 2, color: Color(0xFF8B4513)),
-                              )
-                            : const Icon(Icons.psychology,
-                                size: 18, color: Color(0xFF8B4513)),
-                        label: const Text('Hỏi Mentor',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF8B4513))),
-                        onPressed: state.isGeminiLoading
-                            ? null
-                            : () {
-                                context.read<AnalysisBloc>().add(
-                                      RequestGeminiAnalysisEvent(
-                                        fen: _board.toFen(),
-                                        topMoves:
-                                            state.multiPvs.values.toList(),
-                                      ),
-                                    );
-                              },
-                      ),
-                    ],
-                  );
-                },
-              ),
-              BlocBuilder<AnalysisBloc, AnalysisState>(
-                builder: (context, state) {
-                  if (state.geminiExplanation == null &&
-                      !state.isGeminiLoading) {
-                    return const SizedBox.shrink();
-                  }
-                  return Container(
-                    margin: const EdgeInsets.only(top: 8),
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                          color: const Color(0xFF8B4513).withOpacity(0.2)),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  final isLoading = state.latestOutput == null;
+                  if (isLoading) {
+                    return const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            const Icon(Icons.auto_awesome,
-                                size: 16, color: Colors.blue),
-                            const SizedBox(width: 8),
-                            Text('VU DUC DU MENTOR:',
-                                style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.blue.shade800,
-                                    letterSpacing: 1.1)),
-                          ],
+                        SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(
+                              strokeWidth: 2, color: Color(0xFF8B4513)),
                         ),
-                        const SizedBox(height: 6),
-                        state.isGeminiLoading && state.geminiExplanation == null
-                            ? const LinearProgressIndicator()
-                            : Text(
-                                state.geminiExplanation ?? '',
-                                style: const TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black87,
-                                    height: 1.4),
-                              ),
+                        SizedBox(width: 8),
+                        Text(' Đang phân tích...',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.brown,
+                                fontStyle: FontStyle.italic)),
                       ],
-                    ),
-                  );
+                    );
+                  } else {
+                    final score = state.latestOutput!.scoreCp ?? 0;
+                    return Text(
+                        'Đánh giá: ${(score / 100.0).toStringAsFixed(2)}',
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF8B4513)));
+                  }
                 },
               ),
             ],

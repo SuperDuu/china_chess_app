@@ -61,12 +61,7 @@ class _GameScreenState extends State<GameScreen> {
             ctx.read<EngineBloc>().add(AnalyzePositionEvent(fen));
           } else if (es is EngineAnalyzingState) {
             final output = es.latestOutput;
-            final gameState = ctx.read<GameBloc>().state;
-            final board = gameState.board;
-
-            ctx.read<AnalysisBloc>().add(
-                  UpdateAnalysisEvent(output, board),
-                );
+            final board = ctx.read<GameBloc>().state.board;
 
             // Bot Auto-Move logic
             if (widget.playerColor != null &&
@@ -78,8 +73,8 @@ class _GameScreenState extends State<GameScreen> {
 
               Future.delayed(const Duration(milliseconds: 300), () {
                 if (!ctx.mounted) return;
-                final newFen = ctx.read<GameBloc>().state.fen;
-                ctx.read<EngineBloc>().add(AnalyzePositionEvent(newFen));
+                final newBoard = ctx.read<GameBloc>().state.board;
+                _triggerAnalysis(newBoard);
               });
             }
           }
@@ -90,9 +85,10 @@ class _GameScreenState extends State<GameScreen> {
             _EngineStatusBar(),
 
             // Board
-            Flexible(
+            Expanded(
+              flex: 3, // Give more weight to the board
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
                 child: BlocBuilder<GameBloc, GameState>(
                   builder: (ctx, gameState) =>
                       BlocBuilder<AnalysisBloc, AnalysisState>(
@@ -116,12 +112,13 @@ class _GameScreenState extends State<GameScreen> {
                   const SizedBox(width: 8),
 
                   // LƯỢT ĐI & GEMINI BUTTON
+                  // LƯỢT ĐI
                   Expanded(
                     flex: 2,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Turn Indicator
+                        // LƯỢT ĐI
                         BlocBuilder<GameBloc, GameState>(
                           builder: (ctx, state) {
                             final sideToMove = state.board.sideToMove;
@@ -144,9 +141,7 @@ class _GameScreenState extends State<GameScreen> {
                                   _buildTurnIndicator(sideToMove),
                                   const SizedBox(width: 8),
                                   Text(
-                                    isRedTurn
-                                        ? 'ĐẾN LƯỢT: ĐỎ'
-                                        : 'ĐẾN LƯỢT: ĐEN',
+                                    isRedTurn ? 'LƯỢT: ĐỎ' : 'LƯỢT: ĐEN',
                                     style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 12,
@@ -158,13 +153,13 @@ class _GameScreenState extends State<GameScreen> {
                           },
                         ),
 
-                        // GEMINI TRIGGER BUTTON
+                        // GEMINI TRIGGER
                         BlocBuilder<AnalysisBloc, AnalysisState>(
                           builder: (ctx, state) {
                             final canAnalyze = state.latestOutput != null;
                             return IconButton(
                               icon: Icon(
-                                Icons.lightbulb_circle_rounded,
+                                Icons.psychology,
                                 color: state.isGeminiLoading
                                     ? const Color(0xFFE8B923)
                                     : (canAnalyze
@@ -231,11 +226,12 @@ class _GameScreenState extends State<GameScreen> {
             // GEMINI MENTOR PANEL
             const MentorPanel(),
 
-            // Analysis dashboard
-            const Expanded(
+            // Analysis dashboard - Increased height for better visibility of moves
+            SizedBox(
+              height: 330,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: AnalysisDashboard(),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                child: const AnalysisDashboard(),
               ),
             ),
           ],
@@ -324,8 +320,8 @@ class _GameScreenState extends State<GameScreen> {
         // Trigger engine analysis after move
         Future.delayed(const Duration(milliseconds: 300), () {
           if (!ctx.mounted) return;
-          final fen = ctx.read<GameBloc>().state.fen;
-          ctx.read<EngineBloc>().add(AnalyzePositionEvent(fen));
+          final currentBoard = ctx.read<GameBloc>().state.board;
+          _triggerAnalysis(currentBoard);
         });
       } else {
         // If we tapped another friendly piece, select it instead
@@ -340,6 +336,7 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   void _triggerAnalysis(XiangqiBoard board) {
+    context.read<AnalysisBloc>().add(SetBoardEvent(board));
     context.read<EngineBloc>().add(AnalyzePositionEvent(board.toFen()));
   }
 

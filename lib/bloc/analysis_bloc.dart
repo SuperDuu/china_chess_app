@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../game/xiangqi_model.dart';
 import '../game/analysis_model.dart';
@@ -37,6 +38,11 @@ class ChangeTabEvent extends AnalysisEvent {
 class DismissHintEvent extends AnalysisEvent {}
 
 class ResetAnalysisEvent extends AnalysisEvent {}
+
+class SetBoardEvent extends AnalysisEvent {
+  final XiangqiBoard board;
+  SetBoardEvent(this.board);
+}
 
 class SetHumanColorEvent extends AnalysisEvent {
   final PieceColor? color;
@@ -188,17 +194,35 @@ String _selectHintQuestion(
 class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
   final UcciController _ctrl;
   final GeminiService _gemini = GeminiService();
+  StreamSubscription? _engineSub;
 
   AnalysisBloc({UcciController? controller})
       : _ctrl = controller ?? UcciController.instance,
         super(AnalysisState()) {
     on<UpdateAnalysisEvent>(_onUpdate);
+    on<SetBoardEvent>(_onSetBoard);
     on<RequestHintEvent>(_onHint);
     on<RequestGeminiAnalysisEvent>(_onGeminiAnalysis);
     on<DismissHintEvent>(_onDismiss);
     on<ResetAnalysisEvent>(_onReset);
     on<SetHumanColorEvent>(_onSetHumanColor);
     on<ChangeTabEvent>(_onChangeTab);
+
+    // Step 1: Listen to UCCI Controller directly
+    _engineSub = _ctrl.outputStream.listen((output) {
+      if (output.isInfo || output.isBestMove) {
+        add(UpdateAnalysisEvent(output, state.board));
+      }
+    });
+  }
+
+  void _onSetBoard(SetBoardEvent e, Emitter<AnalysisState> emit) {
+    emit(state.copyWith(
+      board: e.board,
+      latestOutput: null, // Critical for "Loading" indicator
+      multiPvs: {},
+      translatedPvs: {},
+    ));
   }
 
   void _onChangeTab(ChangeTabEvent e, Emitter<AnalysisState> emit) {
@@ -208,7 +232,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
   void _onReset(ResetAnalysisEvent e, Emitter<AnalysisState> emit) {
     emit(state.copyWith(
       clearGemini: true,
-      latestOutput: null,
+      latestOutput: null, // Forces loading indicator on next start
       multiPvs: {},
       pendingMultiPvs: {},
       translatedPvs: {},
@@ -437,5 +461,11 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
       return 'Tốc độ ra quân chậm, cần tranh nhịp phát triển Xe/Mã.';
     }
     return 'Thế trận đang giằng co, hãy tìm cơ hội tranh tiên.';
+  }
+
+  @override
+  Future<void> close() {
+    _engineSub?.cancel();
+    return super.close();
   }
 }

@@ -86,11 +86,12 @@ class MentorPanel extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           const Text(
-            'Đang suy ngẫm...',
+            'Chờ tôi 1 phút để suy nghĩ...',
             style: TextStyle(
               fontSize: 12,
               fontStyle: FontStyle.italic,
               color: Color(0xFF8B4513),
+              fontWeight: FontWeight.bold,
             ),
           ),
         ],
