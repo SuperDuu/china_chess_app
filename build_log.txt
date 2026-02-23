@@ -34,20 +34,20 @@
 [        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
 [        ] Artifact Instance of 'FontSubsetArtifacts' is not required, skipping update.
 [        ] Artifact Instance of 'PubDependencies' is not required, skipping update.
-[ +112 ms] executing: [/home/du/Desktop/china_chess_app/] /home/du/Desktop/china_chess_app/flutter/bin/cache/dart-sdk/bin/dart pub --suppress-analytics --verbose --directory . get --example
+[ +112 ms] executing: [/home/du/Desktop/chinese_chess_app/] /home/du/Desktop/chinese_chess_app/flutter/bin/cache/dart-sdk/bin/dart pub --suppress-analytics --verbose --directory . get --example
 FINE: Pub 3.5.4
 MSG : Resolving dependencies...
-SLVR: fact: china_chess_app is 1.0.0+1
-SLVR: derived: china_chess_app
-SLVR: fact: china_chess_app depends on flutter from sdk
-SLVR: fact: china_chess_app depends on cupertino_icons ^1.0.8
-SLVR: fact: china_chess_app depends on flutter_bloc ^8.1.6
-SLVR: fact: china_chess_app depends on path_provider ^2.1.4
-SLVR: fact: china_chess_app depends on device_info_plus ^10.1.2
-SLVR: fact: china_chess_app depends on ffi ^2.1.3
-SLVR: fact: china_chess_app depends on flutter_test from sdk
-SLVR: fact: china_chess_app depends on flutter_lints ^4.0.0
-SLVR:   selecting china_chess_app
+SLVR: fact: chinese_chess_app is 1.0.0+1
+SLVR: derived: chinese_chess_app
+SLVR: fact: chinese_chess_app depends on flutter from sdk
+SLVR: fact: chinese_chess_app depends on cupertino_icons ^1.0.8
+SLVR: fact: chinese_chess_app depends on flutter_bloc ^8.1.6
+SLVR: fact: chinese_chess_app depends on path_provider ^2.1.4
+SLVR: fact: chinese_chess_app depends on device_info_plus ^10.1.2
+SLVR: fact: chinese_chess_app depends on ffi ^2.1.3
+SLVR: fact: chinese_chess_app depends on flutter_test from sdk
+SLVR: fact: chinese_chess_app depends on flutter_lints ^4.0.0
+SLVR:   selecting chinese_chess_app
 SLVR:   derived: flutter_lints ^4.0.0
 SLVR:   derived: flutter_test from sdk
 SLVR:   derived: ffi ^2.1.3
@@ -1481,7 +1481,7 @@ FINE: Contents:
     |     },
     |     {
     |       "name": "flutter",
-    |       "rootUri": "file:///home/du/Desktop/china_chess_app/flutter/packages/flutter",
+    |       "rootUri": "file:///home/du/Desktop/chinese_chess_app/flutter/packages/flutter",
     |       "packageUri": "lib/",
     |       "languageVersion": "3.3"
     |     },
@@ -1499,13 +1499,13 @@ FINE: Contents:
     |     },
     |     {
     |       "name": "flutter_test",
-    |       "rootUri": "file:///home/du/Desktop/china_chess_app/flutter/packages/flutter_test",
+    |       "rootUri": "file:///home/du/Desktop/chinese_chess_app/flutter/packages/flutter_test",
     |       "packageUri": "lib/",
     |       "languageVersion": "3.3"
     |     },
     |     {
     |       "name": "flutter_web_plugins",
-    |       "rootUri": "file:///home/du/Desktop/china_chess_app/flutter/packages/flutter_web_plugins",
+    |       "rootUri": "file:///home/du/Desktop/chinese_chess_app/flutter/packages/flutter_web_plugins",
     |       "packageUri": "lib/",
     |       "languageVersion": "3.2"
     |     },
@@ -1619,7 +1619,7 @@ FINE: Contents:
     |     },
     |     {
     |       "name": "sky_engine",
-    |       "rootUri": "file:///home/du/Desktop/china_chess_app/flutter/bin/cache/pkg/sky_engine",
+    |       "rootUri": "file:///home/du/Desktop/chinese_chess_app/flutter/bin/cache/pkg/sky_engine",
     |       "packageUri": "lib/",
     |       "languageVersion": "3.2"
     |     },
@@ -1696,7 +1696,7 @@ FINE: Contents:
     |       "languageVersion": "3.3"
     |     },
     |     {
-    |       "name": "china_chess_app",
+    |       "name": "chinese_chess_app",
     |       "rootUri": "../",
     |       "packageUri": "lib/",
     |       "languageVersion": "3.5"
@@ -1705,7 +1705,7 @@ FINE: Contents:
     |   "generated": "2026-02-22T06:27:58.425520Z",
     |   "generator": "pub",
     |   "generatorVersion": "3.5.4",
-    |   "flutterRoot": "file:///home/du/Desktop/china_chess_app/flutter",
+    |   "flutterRoot": "file:///home/du/Desktop/chinese_chess_app/flutter",
     |   "flutterVersion": "3.24.5",
     |   "pubCache": "file:///home/du/.pub-cache"
     | }
@@ -1729,12 +1729,12 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ] Found plugin path_provider_foundation at /home/du/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.1/
 [        ] Found plugin path_provider_linux at /home/du/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 [   +1 ms] Found plugin path_provider_windows at /home/du/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
-[  +14 ms] Generating /home/du/Desktop/china_chess_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+[  +14 ms] Generating /home/du/Desktop/chinese_chess_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 [  +52 ms] Top-level Gradle build file not found, skipping migration of task "clean".
 [   +1 ms] Android Studio version could not be detected, skipping Gradle-Java version compatibility check.
-[  +12 ms] Using gradle from /home/du/Desktop/china_chess_app/android/gradlew.
+[  +12 ms] Using gradle from /home/du/Desktop/chinese_chess_app/android/gradlew.
 [   +5 ms] Running Gradle task 'assembleDebug'...
-[   +3 ms] executing: [/home/du/Desktop/china_chess_app/android/] /home/du/Desktop/china_chess_app/android/gradlew --full-stacktrace --info -Pverbose=true -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib/main.dart -Pbase-application-name=android.app.Application -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false assembleDebug
+[   +3 ms] executing: [/home/du/Desktop/chinese_chess_app/android/] /home/du/Desktop/chinese_chess_app/android/gradlew --full-stacktrace --info -Pverbose=true -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib/main.dart -Pbase-application-name=android.app.Application -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false assembleDebug
 [ +338 ms] Initialized native services in: /home/du/.gradle/native
 [        ] Initialized jansi services in: /home/du/.gradle/native
 [ +112 ms] Welcome to Gradle 8.14!
@@ -1747,13 +1747,13 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [  +99 ms] The client will now receive all logging from the daemon (pid: 15467). The daemon log file: /home/du/.gradle/daemon/8.14/daemon-15467.out.log
 [        ] Starting 5th build in daemon [uptime: 1 hrs 3 mins 13.815 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 8 GiB, non-heap usage: 7% of 4 GiB]
 [        ] Using 16 worker leases.
-[        ] Now considering [/home/du/Desktop/china_chess_app/android, /home/du/Desktop/china_chess_app/flutter/packages/flutter_tools/gradle, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
+[        ] Now considering [/home/du/Desktop/chinese_chess_app/android, /home/du/Desktop/chinese_chess_app/flutter/packages/flutter_tools/gradle, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
 [        ] Watching the file system is configured to be enabled if available
 [        ] File system watching is active
 [        ] Starting Build
-[        ] Now considering [/home/du/Desktop/china_chess_app/flutter/packages/flutter_tools/gradle, /home/du/Desktop/china_chess_app/android, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
+[        ] Now considering [/home/du/Desktop/chinese_chess_app/flutter/packages/flutter_tools/gradle, /home/du/Desktop/chinese_chess_app/android, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
 [        ] > Configure project :gradle
-[        ] Evaluating project ':gradle' using build file '/home/du/Desktop/china_chess_app/flutter/packages/flutter_tools/gradle/build.gradle.kts'.
+[        ] Evaluating project ':gradle' using build file '/home/du/Desktop/chinese_chess_app/flutter/packages/flutter_tools/gradle/build.gradle.kts'.
 [        ] Resolved plugin [id: 'org.gradle.java-gradle-plugin']
 [        ] Resolved plugin [id: 'org.gradle.groovy']
 [        ] Resolved plugin [id: 'dev.flutter.flutter-plugin-loader', version: '1.0.0']
@@ -1794,11 +1794,11 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ]   Build cache is disabled
 [        ]   Not worth caching
 [        ] Skipping task ':gradle:jar' as it is up-to-date.
-[        ] Settings evaluated using settings file '/home/du/Desktop/china_chess_app/android/settings.gradle.kts'.
-[        ] Projects loaded. Root project using build file '/home/du/Desktop/china_chess_app/android/build.gradle.kts'.
+[        ] Settings evaluated using settings file '/home/du/Desktop/chinese_chess_app/android/settings.gradle.kts'.
+[        ] Projects loaded. Root project using build file '/home/du/Desktop/chinese_chess_app/android/build.gradle.kts'.
 [        ] Included projects: [root project 'android', project ':app', project ':device_info_plus', project ':path_provider_android']
 [ +196 ms] > Configure project :app
-[        ] Evaluating project ':app' using build file '/home/du/Desktop/china_chess_app/android/app/build.gradle.kts'.
+[        ] Evaluating project ':app' using build file '/home/du/Desktop/chinese_chess_app/android/app/build.gradle.kts'.
 [        ] Resolved plugin [id: 'com.android.application']
 [        ] Resolved plugin [id: 'kotlin-android']
 [        ] Resolved plugin [id: 'dev.flutter.flutter-gradle-plugin']
@@ -1806,7 +1806,7 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ] Build cc2cb04c-44ce-441d-bdac-603813a96084 is started
 [        ] Using Kotlin Gradle Plugin gradle813 variant
 [        ] > Configure project :
-[        ] Evaluating root project 'android' using build file '/home/du/Desktop/china_chess_app/android/build.gradle.kts'.
+[        ] Evaluating root project 'android' using build file '/home/du/Desktop/chinese_chess_app/android/build.gradle.kts'.
 [  +98 ms] > Configure project :device_info_plus
 [        ] Evaluating project ':device_info_plus' using build file '/home/du/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2/android/build.gradle'.
 [        ] Using default execution profile
@@ -1822,7 +1822,7 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [   +1 ms] - device_info_plus requires Android NDK 27.0.12077973
 [        ] - path_provider_android requires Android NDK 27.0.12077973
 [        ] Fix this issue by using the highest Android NDK version (they are backward compatible).
-[        ] Add the following to /home/du/Desktop/china_chess_app/android/app/build.gradle.kts:
+[        ] Add the following to /home/du/Desktop/chinese_chess_app/android/app/build.gradle.kts:
 [        ]     android {
 [        ]         ndkVersion = "27.0.12077973"
 [        ]         ...
@@ -1856,8 +1856,8 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ]   Caching has not been enabled for the task
 [        ] Task ':app:compileFlutterBuildDebug' is not up-to-date because:
 [        ]   Task has failed previously.
-[        ] Starting process 'command '/home/du/Desktop/china_chess_app/flutter/bin/flutter''. Working directory: /home/du/Desktop/china_chess_app Command: /home/du/Desktop/china_chess_app/flutter/bin/flutter --verbose assemble --no-version-check --depfile /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/flutter_build.d --output /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true -dFlavor= -dAndroidArchs=android-arm android-arm64 android-x64 -dMinSdkVersion=21 debug_android_application
-[        ] Successfully started process 'command '/home/du/Desktop/china_chess_app/flutter/bin/flutter''
+[        ] Starting process 'command '/home/du/Desktop/chinese_chess_app/flutter/bin/flutter''. Working directory: /home/du/Desktop/chinese_chess_app Command: /home/du/Desktop/chinese_chess_app/flutter/bin/flutter --verbose assemble --no-version-check --depfile /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/flutter_build.d --output /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true -dFlavor= -dAndroidArchs=android-arm android-arm64 android-x64 -dMinSdkVersion=21 debug_android_application
+[        ] Successfully started process 'command '/home/du/Desktop/chinese_chess_app/flutter/bin/flutter''
 [        ] [  +16 ms] executing: uname -m
 [        ] [   +8 ms] Exit code 0 from: uname -m
 [        ] [        ] x86_64
@@ -1896,7 +1896,7 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ] [        ] Artifact Instance of 'PubDependencies' is not required, skipping update.
 [        ] [  +36 ms] Initializing file store
 [        ] [  +14 ms] Skipping target: gen_localizations
-[        ] [   +5 ms] gen_dart_plugin_registrant: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/china_chess_app/.dart_tool/package_config_subset}
+[        ] [   +5 ms] gen_dart_plugin_registrant: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/chinese_chess_app/.dart_tool/package_config_subset}
 [        ] [  +29 ms] Found plugin device_info_plus at /home/du/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2/
 [        ] [  +24 ms] Found plugin path_provider at /home/du/.pub-cache/hosted/pub.dev/path_provider-2.1.5/
 [        ] [   +1 ms] Found plugin path_provider_android at /home/du/.pub-cache/hosted/pub.dev/path_provider_android-2.2.15/
@@ -1905,7 +1905,7 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ] [   +2 ms] Found plugin path_provider_windows at /home/du/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
 [        ] [  +61 ms] gen_dart_plugin_registrant: Complete
 [        ] [        ] kernel_snapshot_program: Starting due to {}
-[        ] [   +6 ms] /home/du/Desktop/china_chess_app/flutter/bin/cache/dart-sdk/bin/dartaotruntime --disable-dart-dev /home/du/Desktop/china_chess_app/flutter/bin/cache/dart-sdk/bin/snapshots/frontend_server_aot.dart.snapshot --sdk-root /home/du/Desktop/china_chess_app/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --target=flutter --no-print-incremental-dependencies -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --no-link-platform --packages /home/du/Desktop/china_chess_app/.dart_tool/package_config.json --output-dill /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --depfile /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/kernel_snapshot_program.d --incremental --initialize-from-dill /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --source file:///home/du/Desktop/china_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --source package:flutter/src/dart_plugin_registrant.dart -Dflutter.dart_plugin_registrant=file:///home/du/Desktop/china_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --verbosity=error package:china_chess_app/main.dart
+[        ] [   +6 ms] /home/du/Desktop/chinese_chess_app/flutter/bin/cache/dart-sdk/bin/dartaotruntime --disable-dart-dev /home/du/Desktop/chinese_chess_app/flutter/bin/cache/dart-sdk/bin/snapshots/frontend_server_aot.dart.snapshot --sdk-root /home/du/Desktop/chinese_chess_app/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --target=flutter --no-print-incremental-dependencies -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --no-link-platform --packages /home/du/Desktop/chinese_chess_app/.dart_tool/package_config.json --output-dill /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --depfile /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/kernel_snapshot_program.d --incremental --initialize-from-dill /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --source file:///home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --source package:flutter/src/dart_plugin_registrant.dart -Dflutter.dart_plugin_registrant=file:///home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --verbosity=error package:chinese_chess_app/main.dart
 [ +293 ms] [+1930 ms] lib/main.dart:63:26: Error: Couldn't find constructor 'TabBarThemeData'.
 [        ] [   +1 ms]       tabBarTheme: const TabBarThemeData(
 [        ] [        ]                          ^^^^^^^^^^^^^^^
@@ -1997,11 +1997,11 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ] [   +5 ms] exiting with code 1
 [        ] > Task :app:compileFlutterBuildDebug FAILED
 [        ] Build cc2cb04c-44ce-441d-bdac-603813a96084 is closed
-[        ] [Incubating] Problems report is available at: file:///home/du/Desktop/china_chess_app/build/reports/problems/problems-report.html
+[        ] [Incubating] Problems report is available at: file:///home/du/Desktop/chinese_chess_app/build/reports/problems/problems-report.html
 [        ] FAILURE: Build failed with an exception.
 [        ] * What went wrong:
 [        ] Execution failed for task ':app:compileFlutterBuildDebug'.
-[        ] > Process 'command '/home/du/Desktop/china_chess_app/flutter/bin/flutter'' finished with non-zero exit value 1
+[        ] > Process 'command '/home/du/Desktop/chinese_chess_app/flutter/bin/flutter'' finished with non-zero exit value 1
 [        ] * Try:
 [        ] > Run with --debug option to get more log output.
 [        ] > Run with --scan to get full insights.
@@ -2043,7 +2043,7 @@ MSG : Logs written to /home/du/.pub-cache/log/pub_log.txt.
 [        ] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 [        ] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 [        ] 	at java.base/java.lang.Thread.run(Thread.java:840)
-[        ] Caused by: org.gradle.process.internal.ExecException: Process 'command '/home/du/Desktop/china_chess_app/flutter/bin/flutter'' finished with non-zero exit value 1
+[        ] Caused by: org.gradle.process.internal.ExecException: Process 'command '/home/du/Desktop/chinese_chess_app/flutter/bin/flutter'' finished with non-zero exit value 1
 [        ] 	at org.gradle.process.internal.DefaultExecHandle$ExecResultImpl.assertNormalExitValue(DefaultExecHandle.java:442)
 [        ] 	at org.gradle.process.internal.DefaultExecAction.execute(DefaultExecAction.java:49)
 [        ] 	at org.gradle.process.internal.DefaultExecActionFactory.exec(DefaultExecActionFactory.java:216)

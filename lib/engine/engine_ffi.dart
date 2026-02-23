@@ -121,7 +121,7 @@ class EngineOutput {
 // ─── Native library path resolver ────────────────────────────────────────────
 
 class NativeLibResolver {
-  static const _channel = MethodChannel('com.example.china_chess_app/engine');
+  static const _channel = MethodChannel('com.example.chinese_chess_app/engine');
   static String? _cachedDir;
 
   static Future<String> getNativeLibDir() async {

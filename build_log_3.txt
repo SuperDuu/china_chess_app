@@ -53,24 +53,24 @@
 [        ] Found plugin path_provider_foundation at /home/du/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.1/
 [        ] Found plugin path_provider_linux at /home/du/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 [   +1 ms] Found plugin path_provider_windows at /home/du/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
-[  +10 ms] Generating /home/du/Desktop/china_chess_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+[  +10 ms] Generating /home/du/Desktop/chinese_chess_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 [  +49 ms] Top-level Gradle build file not found, skipping migration of task "clean".
 [        ] Android Studio version could not be detected, skipping Gradle-Java version compatibility check.
-[   +9 ms] Using gradle from /home/du/Desktop/china_chess_app/android/gradlew.
+[   +9 ms] Using gradle from /home/du/Desktop/chinese_chess_app/android/gradlew.
 [   +4 ms] Running Gradle task 'assembleDebug'...
-[   +2 ms] executing: [/home/du/Desktop/china_chess_app/android/] /home/du/Desktop/china_chess_app/android/gradlew --full-stacktrace --info -Pverbose=true -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib/main.dart -Pbase-application-name=android.app.Application -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false assembleDebug
+[   +2 ms] executing: [/home/du/Desktop/chinese_chess_app/android/] /home/du/Desktop/chinese_chess_app/android/gradlew --full-stacktrace --info -Pverbose=true -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib/main.dart -Pbase-application-name=android.app.Application -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false assembleDebug
 [ +235 ms] Initialized native services in: /home/du/.gradle/native
 [        ] Initialized jansi services in: /home/du/.gradle/native
 [ +212 ms] The client will now receive all logging from the daemon (pid: 15467). The daemon log file: /home/du/.gradle/daemon/8.14/daemon-15467.out.log
 [        ] Starting 7th build in daemon [uptime: 1 hrs 12 mins 5.46 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 8 GiB, non-heap usage: 7% of 4 GiB]
 [        ] Using 16 worker leases.
-[        ] Now considering [/home/du/Desktop/china_chess_app/android, /home/du/Desktop/china_chess_app/flutter/packages/flutter_tools/gradle, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
+[        ] Now considering [/home/du/Desktop/chinese_chess_app/android, /home/du/Desktop/chinese_chess_app/flutter/packages/flutter_tools/gradle, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
 [        ] Watching the file system is configured to be enabled if available
 [        ] File system watching is active
 [        ] Starting Build
-[        ] Now considering [/home/du/Desktop/china_chess_app/flutter/packages/flutter_tools/gradle, /home/du/Desktop/china_chess_app/android, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
+[        ] Now considering [/home/du/Desktop/chinese_chess_app/flutter/packages/flutter_tools/gradle, /home/du/Desktop/chinese_chess_app/android, /home/du/snap/flutter/common/flutter/packages/flutter_tools/gradle] as hierarchies to watch
 [        ] > Configure project :gradle
-[        ] Evaluating project ':gradle' using build file '/home/du/Desktop/china_chess_app/flutter/packages/flutter_tools/gradle/build.gradle.kts'.
+[        ] Evaluating project ':gradle' using build file '/home/du/Desktop/chinese_chess_app/flutter/packages/flutter_tools/gradle/build.gradle.kts'.
 [        ] Resolved plugin [id: 'org.gradle.java-gradle-plugin']
 [        ] Resolved plugin [id: 'org.gradle.groovy']
 [        ] Resolved plugin [id: 'dev.flutter.flutter-plugin-loader', version: '1.0.0']
@@ -111,11 +111,11 @@
 [        ]   Build cache is disabled
 [        ]   Not worth caching
 [        ] Skipping task ':gradle:jar' as it is up-to-date.
-[  +94 ms] Settings evaluated using settings file '/home/du/Desktop/china_chess_app/android/settings.gradle.kts'.
-[        ] Projects loaded. Root project using build file '/home/du/Desktop/china_chess_app/android/build.gradle.kts'.
+[  +94 ms] Settings evaluated using settings file '/home/du/Desktop/chinese_chess_app/android/settings.gradle.kts'.
+[        ] Projects loaded. Root project using build file '/home/du/Desktop/chinese_chess_app/android/build.gradle.kts'.
 [        ] Included projects: [root project 'android', project ':app', project ':device_info_plus', project ':path_provider_android']
 [  +99 ms] > Configure project :app
-[        ] Evaluating project ':app' using build file '/home/du/Desktop/china_chess_app/android/app/build.gradle.kts'.
+[        ] Evaluating project ':app' using build file '/home/du/Desktop/chinese_chess_app/android/app/build.gradle.kts'.
 [        ] Resolved plugin [id: 'com.android.application']
 [        ] Resolved plugin [id: 'kotlin-android']
 [        ] Resolved plugin [id: 'dev.flutter.flutter-gradle-plugin']
@@ -123,7 +123,7 @@
 [        ] Build a58f3c47-74c0-4aa2-8f71-7ca41a4d4aac is started
 [        ] Using Kotlin Gradle Plugin gradle813 variant
 [        ] > Configure project :
-[        ] Evaluating root project 'android' using build file '/home/du/Desktop/china_chess_app/android/build.gradle.kts'.
+[        ] Evaluating root project 'android' using build file '/home/du/Desktop/chinese_chess_app/android/build.gradle.kts'.
 [        ] > Configure project :device_info_plus
 [        ] Evaluating project ':device_info_plus' using build file '/home/du/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2/android/build.gradle'.
 [        ] Using default execution profile
@@ -139,7 +139,7 @@
 [        ] - device_info_plus requires Android NDK 27.0.12077973
 [        ] - path_provider_android requires Android NDK 27.0.12077973
 [        ] Fix this issue by using the highest Android NDK version (they are backward compatible).
-[        ] Add the following to /home/du/Desktop/china_chess_app/android/app/build.gradle.kts:
+[        ] Add the following to /home/du/Desktop/chinese_chess_app/android/app/build.gradle.kts:
 [        ]     android {
 [        ]         ndkVersion = "27.0.12077973"
 [        ]         ...
@@ -173,8 +173,8 @@
 [        ]   Caching has not been enabled for the task
 [        ] Task ':app:compileFlutterBuildDebug' is not up-to-date because:
 [        ]   Task has failed previously.
-[        ] Starting process 'command '/home/du/Desktop/china_chess_app/flutter/bin/flutter''. Working directory: /home/du/Desktop/china_chess_app Command: /home/du/Desktop/china_chess_app/flutter/bin/flutter --verbose assemble --no-version-check --depfile /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/flutter_build.d --output /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true -dFlavor= -dAndroidArchs=android-arm android-arm64 android-x64 -dMinSdkVersion=21 debug_android_application
-[        ] Successfully started process 'command '/home/du/Desktop/china_chess_app/flutter/bin/flutter''
+[        ] Starting process 'command '/home/du/Desktop/chinese_chess_app/flutter/bin/flutter''. Working directory: /home/du/Desktop/chinese_chess_app Command: /home/du/Desktop/chinese_chess_app/flutter/bin/flutter --verbose assemble --no-version-check --depfile /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/flutter_build.d --output /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true -dFlavor= -dAndroidArchs=android-arm android-arm64 android-x64 -dMinSdkVersion=21 debug_android_application
+[        ] Successfully started process 'command '/home/du/Desktop/chinese_chess_app/flutter/bin/flutter''
 [        ] [  +10 ms] executing: uname -m
 [        ] [   +6 ms] Exit code 0 from: uname -m
 [        ] [        ] x86_64
@@ -215,20 +215,20 @@
 [        ] [   +5 ms] Done initializing file store
 [        ] [  +27 ms] Skipping target: gen_localizations
 [        ] [   +5 ms] Skipping target: gen_dart_plugin_registrant
-[        ] [ +121 ms] kernel_snapshot_program: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/china_chess_app/flutter/packages/flutter/lib/src/rendering/custom_paint.dart,/home/du/Desktop/china_chess_app/flutter/packages/flutter/lib/src/rendering/proxy_box.dart,/home/du/Desktop/china_chess_app/flutter/packages/flutter/lib/src/widgets/sliver_tree.dart}
-[        ] [   +6 ms] /home/du/Desktop/china_chess_app/flutter/bin/cache/dart-sdk/bin/dartaotruntime --disable-dart-dev /home/du/Desktop/china_chess_app/flutter/bin/cache/dart-sdk/bin/snapshots/frontend_server_aot.dart.snapshot --sdk-root /home/du/Desktop/china_chess_app/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --target=flutter --no-print-incremental-dependencies -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --no-link-platform --packages /home/du/Desktop/china_chess_app/.dart_tool/package_config.json --output-dill /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --depfile /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/kernel_snapshot_program.d --incremental --initialize-from-dill /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --source file:///home/du/Desktop/china_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --source package:flutter/src/dart_plugin_registrant.dart -Dflutter.dart_plugin_registrant=file:///home/du/Desktop/china_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --verbosity=error package:china_chess_app/main.dart
+[        ] [ +121 ms] kernel_snapshot_program: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/chinese_chess_app/flutter/packages/flutter/lib/src/rendering/custom_paint.dart,/home/du/Desktop/chinese_chess_app/flutter/packages/flutter/lib/src/rendering/proxy_box.dart,/home/du/Desktop/chinese_chess_app/flutter/packages/flutter/lib/src/widgets/sliver_tree.dart}
+[        ] [   +6 ms] /home/du/Desktop/chinese_chess_app/flutter/bin/cache/dart-sdk/bin/dartaotruntime --disable-dart-dev /home/du/Desktop/chinese_chess_app/flutter/bin/cache/dart-sdk/bin/snapshots/frontend_server_aot.dart.snapshot --sdk-root /home/du/Desktop/chinese_chess_app/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --target=flutter --no-print-incremental-dependencies -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --no-link-platform --packages /home/du/Desktop/chinese_chess_app/.dart_tool/package_config.json --output-dill /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --depfile /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/kernel_snapshot_program.d --incremental --initialize-from-dill /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill --source file:///home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --source package:flutter/src/dart_plugin_registrant.dart -Dflutter.dart_plugin_registrant=file:///home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/dart_plugin_registrant.dart --verbosity=error package:chinese_chess_app/main.dart
 [+2096 ms] [+3765 ms] kernel_snapshot_program: Complete
 [ +400 ms] [ +372 ms] native_assets: Starting due to {}
 [        ] [  +10 ms] No packages with native assets. Skipping native assets compilation.
 [        ] [        ] Writing native_assets.yaml.
-[        ] [   +8 ms] Writing /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/native_assets.yaml done.
+[        ] [   +8 ms] Writing /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/native_assets.yaml done.
 [        ] [        ] native_assets: Complete
-[        ] [        ] kernel_snapshot_native_assets: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/native_assets.yaml}
+[        ] [        ] kernel_snapshot_native_assets: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/native_assets.yaml}
 [        ] [   +2 ms] kernel_snapshot_native_assets: Complete
-[        ] [        ] kernel_snapshot: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill,/home/du/Desktop/china_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/native_assets.dill}
+[        ] [        ] kernel_snapshot: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: /home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/program.dill,/home/du/Desktop/chinese_chess_app/.dart_tool/flutter_build/a46e7c65dfe9fe15bfc5d42f71101dd8/native_assets.dill}
 [        ] [  +10 ms] kernel_snapshot: Complete
 [        ] [        ] debug_android_application: Starting due to {}
-[  +99 ms] [ +115 ms] shaderc command: [/home/du/Desktop/china_chess_app/flutter/bin/cache/artifacts/engine/linux-x64/impellerc, --sksl, --runtime-stage-gles, --runtime-stage-vulkan, --iplr, --sl=/home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/flutter_assets/shaders/ink_sparkle.frag, --spirv=/home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/flutter_assets/shaders/ink_sparkle.frag.spirv, --input=/home/du/Desktop/china_chess_app/flutter/packages/flutter/lib/src/material/shaders/ink_sparkle.frag, --input-type=frag, --include=/home/du/Desktop/china_chess_app/flutter/packages/flutter/lib/src/material/shaders, --include=/home/du/Desktop/china_chess_app/flutter/bin/cache/artifacts/engine/linux-x64/shader_lib]
+[  +99 ms] [ +115 ms] shaderc command: [/home/du/Desktop/chinese_chess_app/flutter/bin/cache/artifacts/engine/linux-x64/impellerc, --sksl, --runtime-stage-gles, --runtime-stage-vulkan, --iplr, --sl=/home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/flutter_assets/shaders/ink_sparkle.frag, --spirv=/home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/flutter_assets/shaders/ink_sparkle.frag.spirv, --input=/home/du/Desktop/chinese_chess_app/flutter/packages/flutter/lib/src/material/shaders/ink_sparkle.frag, --input-type=frag, --include=/home/du/Desktop/chinese_chess_app/flutter/packages/flutter/lib/src/material/shaders, --include=/home/du/Desktop/chinese_chess_app/flutter/bin/cache/artifacts/engine/linux-x64/shader_lib]
 [ +299 ms] [ +307 ms] debug_android_application: Complete
 [ +799 ms] [ +771 ms] Persisting file store
 [        ] [   +4 ms] Done persisting file store
@@ -249,12 +249,12 @@
 [        ]   Input property 'rootSpec$1$3.destPath' has been added for task ':app:packJniLibsflutterBuildDebug'
 [        ]   Input property 'rootSpec$1$3.dirPermissions' has been added for task ':app:packJniLibsflutterBuildDebug'
 [        ]   and more...
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/armeabi-v7a', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/native_assets/android/jniLibs/lib/armeabi-v7a', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/arm64-v8a', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/native_assets/android/jniLibs/lib/arm64-v8a', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/x86_64', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/native_assets/android/jniLibs/lib/x86_64', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/armeabi-v7a', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/native_assets/android/jniLibs/lib/armeabi-v7a', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/arm64-v8a', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/native_assets/android/jniLibs/lib/arm64-v8a', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/x86_64', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/native_assets/android/jniLibs/lib/x86_64', not found
 [        ] work action org.gradle.api.internal.artifacts.transform.DefaultTransformUpstreamDependenciesResolver$FinalizeTransformDependenciesFromSelectedArtifacts$CalculateFinalDependencies@55628175 (Thread[Execution worker Thread 9,5,main]) started.
 [ +198 ms] Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/io/flutter/x86_64_debug/1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/x86_64_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262.pom]
 [        ] Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/io/flutter/armeabi_v7a_debug/1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/armeabi_v7a_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262.pom]
@@ -753,9 +753,9 @@
 [        ]   Build cache is disabled
 [        ]   Not worth caching
 [        ] Task ':app:copyFlutterAssetsDebug' is not up-to-date because:
-[        ]   Output property 'destinationDir' file /home/du/Desktop/china_chess_app/build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets has been removed.
-[        ]   Output property 'destinationDir' file /home/du/Desktop/china_chess_app/build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets/AssetManifest.bin has been removed.
-[        ]   Output property 'destinationDir' file /home/du/Desktop/china_chess_app/build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets/FontManifest.json has been removed.
+[        ]   Output property 'destinationDir' file /home/du/Desktop/chinese_chess_app/build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets has been removed.
+[        ]   Output property 'destinationDir' file /home/du/Desktop/chinese_chess_app/build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets/AssetManifest.bin has been removed.
+[        ]   Output property 'destinationDir' file /home/du/Desktop/chinese_chess_app/build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets/FontManifest.json has been removed.
 [        ]   and more...
 [        ] Resolve mutations for :app:generateDebugResValues (Thread[Execution worker Thread 8,5,main]) started.
 [        ] :app:generateDebugResValues (Thread[Execution worker Thread 8,5,main]) started.
@@ -922,105 +922,105 @@
 [        ]   Class path of task ':app:mergeDebugResources' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:mergeDebugResources'.
 [        ] [MergeResources] Inputs are non-incremental full task action.
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-lo_values-lo.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-de_values-de.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt/values-lt.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-lt_values-lt.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hi_values-hi.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-lv_values-lv.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hr_values-hr.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pt_values-pt.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hu_values-hu.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rIN_values-en-rIN.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hy_values-hy.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-uk_values-uk.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ur_values-ur.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-mk_values-mk.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml/values-ml.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ml_values-ml.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-mn_values-mn.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-b+sr+Latn_values-b+sr+Latn.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-af_values-af.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-is_values-is.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-iw_values-iw.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-in_values-in.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-el_values-el.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my/values-my.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-my_values-my.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fr-rCA_values-fr-rCA.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-am_values-am.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zh-rTW_values-zh-rTW.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ms_values-ms.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-es_values-es.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-eu_values-eu.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-nb_values-nb.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zh-rHK_values-zh-rHK.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-mr_values-mr.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fa_values-fa.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ne_values-ne.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zh-rCN_values-zh-rCN.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-az_values-az.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ar_values-ar.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pt-rPT_values-pt-rPT.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rXC_values-en-rXC.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-night-v8_values-night-v8.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-es-rUS_values-es-rUS.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi/values-vi.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-vi_values-vi.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-bs_values-bs.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zu_values-zu.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ro_values-ro.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sk_values-sk.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rGB_values-en-rGB.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ru_values-ru.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-si_values-si.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-kn_values-kn.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ca_values-ca.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl/values-sl.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sl_values-sl.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-be_values-be.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-as_values-as.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pt-rBR_values-pt-rBR.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-it_values-it.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-v21_values-v21.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko/values-ko.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ko_values-ko.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-gu_values-gu.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pa_values-pa.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-cs_values-cs.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja/values-ja.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ja_values-ja.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr/values-fr.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fr_values-fr.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-da_values-da.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sr_values-sr.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ta_values-ta.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rCA_values-en-rCA.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka/values-ka.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ka_values-ka.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn/values-bn.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-bn_values-bn.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th/values-th.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-th_values-th.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-km_values-km.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-bg_values-bg.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fi_values-fi.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sw_values-sw.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl/values-pl.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pl_values-pl.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-or_values-or.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk/values-kk.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-kk_values-kk.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sv_values-sv.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ky_values-ky.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr/values-tr.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-tr_values-tr.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-tl_values-tl.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rAU_values-en-rAU.arsc.flat
-[        ] Compiling xml file /home/du/Desktop/china_chess_app/android/app/src/main/res/drawable-v21/launch_background.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/drawable-v21_launch_background.xml.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-gl_values-gl.arsc.flat
-[        ] Compiling image file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
-[        ] Compiling image file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
-[        ] Compiling image file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
-[        ] Compiling image file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
-[        ] Compiling image file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
-[        ] Compiling file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.png.flat
-[        ] Compiling file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.png.flat
-[        ] Compiling file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.png.flat
-[        ] Compiling file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.png.flat
-[        ] Compiling file /home/du/Desktop/china_chess_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.png.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-uz_values-uz.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-et_values-et.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl/values-nl.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-nl_values-nl.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sq_values-sq.arsc.flat
-[        ] Compiling XML table /home/du/Desktop/china_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-te_values-te.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-lo_values-lo.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-de_values-de.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt/values-lt.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-lt_values-lt.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hi_values-hi.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-lv_values-lv.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hr_values-hr.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pt_values-pt.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hu_values-hu.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rIN_values-en-rIN.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-hy_values-hy.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-uk_values-uk.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ur_values-ur.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-mk_values-mk.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml/values-ml.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ml_values-ml.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-mn_values-mn.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-af_values-af.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-is_values-is.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-iw_values-iw.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-in_values-in.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-el_values-el.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my/values-my.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-my_values-my.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fr-rCA_values-fr-rCA.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-am_values-am.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zh-rTW_values-zh-rTW.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ms_values-ms.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-es_values-es.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-eu_values-eu.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-nb_values-nb.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zh-rHK_values-zh-rHK.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-mr_values-mr.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fa_values-fa.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ne_values-ne.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zh-rCN_values-zh-rCN.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-az_values-az.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ar_values-ar.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pt-rPT_values-pt-rPT.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rXC_values-en-rXC.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-night-v8_values-night-v8.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-es-rUS_values-es-rUS.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi/values-vi.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-vi_values-vi.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-bs_values-bs.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-zu_values-zu.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ro_values-ro.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sk_values-sk.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rGB_values-en-rGB.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ru_values-ru.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-si_values-si.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-kn_values-kn.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ca_values-ca.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl/values-sl.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sl_values-sl.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-be_values-be.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-as_values-as.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pt-rBR_values-pt-rBR.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-it_values-it.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-v21_values-v21.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko/values-ko.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ko_values-ko.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-gu_values-gu.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pa_values-pa.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-cs_values-cs.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja/values-ja.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ja_values-ja.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr/values-fr.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fr_values-fr.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-da_values-da.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sr_values-sr.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ta_values-ta.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rCA_values-en-rCA.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka/values-ka.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ka_values-ka.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn/values-bn.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-bn_values-bn.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th/values-th.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-th_values-th.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-km_values-km.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-bg_values-bg.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-fi_values-fi.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sw_values-sw.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl/values-pl.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-pl_values-pl.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-or_values-or.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk/values-kk.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-kk_values-kk.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sv_values-sv.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-ky_values-ky.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr/values-tr.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-tr_values-tr.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-tl_values-tl.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-en-rAU_values-en-rAU.arsc.flat
+[        ] Compiling xml file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/drawable-v21/launch_background.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/drawable-v21_launch_background.xml.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-gl_values-gl.arsc.flat
+[        ] Compiling image file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+[        ] Compiling image file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+[        ] Compiling image file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+[        ] Compiling image file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+[        ] Compiling image file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+[        ] Compiling file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.png.flat
+[        ] Compiling file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.png.flat
+[        ] Compiling file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.png.flat
+[        ] Compiling file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.png.flat
+[        ] Compiling file /home/du/Desktop/chinese_chess_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.png.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-uz_values-uz.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-et_values-et.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl/values-nl.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-nl_values-nl.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-sq_values-sq.arsc.flat
+[        ] Compiling XML table /home/du/Desktop/chinese_chess_app/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_res/debug/mergeDebugResources/values-te_values-te.arsc.flat
 [        ] Resolve mutations for :app:createDebugCompatibleScreenManifests (Thread[included builds,5,main]) started.
 [        ] :app:createDebugCompatibleScreenManifests (Thread[included builds,5,main]) started.
 [        ] > Task :app:createDebugCompatibleScreenManifests
@@ -1083,7 +1083,7 @@
 [        ] 5    <uses-sdk android:minSdkVersion="19" />
 [        ] 6
 [        ] 7</manifest>
-[        ] Merged manifest saved to /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+[        ] Merged manifest saved to /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
 [        ] > Task :path_provider_android:processDebugManifest
 [        ] Caching disabled for task ':path_provider_android:processDebugManifest' because:
 [        ]   Build cache is disabled
@@ -1101,7 +1101,7 @@
 [        ] 5    <uses-sdk android:minSdkVersion="19" />
 [        ] 6
 [        ] 7</manifest>
-[        ] Merged manifest saved to /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+[        ] Merged manifest saved to /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
 [        ] work action resolve AndroidManifest.xml (project :path_provider_android) (Thread[Execution worker Thread 2,5,main]) started.
 [   +1 ms] work action resolve AndroidManifest.xml (project :device_info_plus) (Thread[Execution worker Thread 14,5,main]) started.
 [        ] Resolve mutations for :app:processDebugMainManifest (Thread[Execution worker Thread 3,5,main]) started.
@@ -1271,8 +1271,8 @@
 [        ]   Build cache is disabled
 [        ] Task ':app:processDebugMainManifest' is not up-to-date because:
 [        ]   Class path of task ':app:processDebugMainManifest' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
-[        ] Loading library manifest /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
-[        ] Loading library manifest /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+[        ] Loading library manifest /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+[        ] Loading library manifest /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
 [        ] Loading library manifest /home/du/.gradle/caches/8.14/transforms/4c51916ff37a9658c8d6828c270c80db/transformed/fragment-1.7.1/AndroidManifest.xml
 [        ] Loading library manifest /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0/AndroidManifest.xml
 [        ] Loading library manifest /home/du/.gradle/caches/8.14/transforms/2cbe009c65bb186071491673ad80ac22/transformed/window-java-1.2.0/AndroidManifest.xml
@@ -1298,16 +1298,16 @@
 [        ] Loading library manifest /home/du/.gradle/caches/8.14/transforms/3cfc70fd64c9b6e4571a99f762a432c2/transformed/interpolator-1.0.0/AndroidManifest.xml
 [        ] Loading library manifest /home/du/.gradle/caches/8.14/transforms/03e3cd152e680d2d7694b1730a2160d4/transformed/core-1.0.0/AndroidManifest.xml
 [        ] Loading library manifest /home/du/.gradle/caches/8.14/transforms/7262faf0930d8e675a0350c519409b0b/transformed/annotation-experimental-1.4.0/AndroidManifest.xml
-[        ] Merging flavors and build manifest /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml 
-[        ] Merging main manifest /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml
+[        ] Merging flavors and build manifest /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml 
+[        ] Merging main manifest /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml
 [        ] Merging manifest with lower AndroidManifest.xml:1:1-46:12
 [        ] Adopted [application: null]
 [        ] Adopted [queries: null]
-[        ] Merging library manifest /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+[        ] Merging library manifest /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
 [        ] Merging manifest with lower [:device_info_plus] AndroidManifest.xml:2:1-7:12
 [        ] uses-sdk defined in both files...
 [        ] Merging uses-sdk with lower [:device_info_plus] AndroidManifest.xml:5:5-44
-[        ] Merging library manifest /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+[        ] Merging library manifest /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
 [        ] Merging manifest with lower [:path_provider_android] AndroidManifest.xml:2:1-7:12
 [        ] uses-sdk defined in both files...
 [        ] Merging uses-sdk with lower [:path_provider_android] AndroidManifest.xml:5:5-44
@@ -1435,12 +1435,12 @@
 [        ] uses-sdk defined in both files...
 [        ] Merging uses-sdk with lower [androidx.annotation:annotation-experimental:1.4.0] AndroidManifest.xml:5:5-44
 [        ] Merging result: WARNING
-[        ] /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:6:9-41 Warning:
+[        ] /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:6:9-41 Warning:
 [        ] 	android:extractNativeLibs should not be specified in this source AndroidManifest.xml file. See https://d.android.com/guide/topics/manifest/application-element#extractNativeLibs for more information.
 [        ] The AGP Upgrade Assistant can remove the attribute from the AndroidManifest.xml file and update the build file accordingly. See https://d.android.com/studio/build/agp-upgrade-assistant for more information.
 [        ] -- Merging decision tree log ---
 [        ] application
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:2:5-34:19
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:2:5-34:19
 [        ] MERGED from [androidx.window:window:1.2.0] /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0/AndroidManifest.xml:22:5-29:19
 [        ] MERGED from [androidx.window:window:1.2.0] /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0/AndroidManifest.xml:22:5-29:19
 [        ] MERGED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
@@ -1456,15 +1456,15 @@
 [        ] 	android:appComponentFactory
 [        ] 		ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 [        ] 	android:name
-[        ] 		INJECTED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml
+[        ] 		INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml
 [        ] manifest
-[        ] ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:1:1-46:12
-[        ] MERGED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:1:1-46:12
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-[        ] MERGED from [:device_info_plus] /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
-[        ] MERGED from [:path_provider_android] /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+[        ] ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:1:1-46:12
+[        ] MERGED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:1:1-46:12
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+[        ] MERGED from [:device_info_plus] /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+[        ] MERGED from [:path_provider_android] /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
 [        ] MERGED from [androidx.fragment:fragment:1.7.1] /home/du/.gradle/caches/8.14/transforms/4c51916ff37a9658c8d6828c270c80db/transformed/fragment-1.7.1/AndroidManifest.xml:2:1-7:12
 [        ] MERGED from [androidx.window:window:1.2.0] /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0/AndroidManifest.xml:17:1-31:12
 [        ] MERGED from [androidx.window:window-java:1.2.0] /home/du/.gradle/caches/8.14/transforms/2cbe009c65bb186071491673ad80ac22/transformed/window-java-1.2.0/AndroidManifest.xml:17:1-21:12
@@ -1491,37 +1491,37 @@
 [        ] MERGED from [androidx.window.extensions.core:core:1.0.0] /home/du/.gradle/caches/8.14/transforms/03e3cd152e680d2d7694b1730a2160d4/transformed/core-1.0.0/AndroidManifest.xml:2:1-7:12
 [        ] MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/du/.gradle/caches/8.14/transforms/7262faf0930d8e675a0350c519409b0b/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
 [        ] 	package
-[        ] 		INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] 		INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
 [        ] 	android:versionName
-[        ] 		INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] 		INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
 [        ] 	android:versionCode
-[        ] 		INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] 		INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
 [        ] 	xmlns:android
-[        ] 		ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:1:11-69
+[        ] 		ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:1:11-69
 [        ] queries
-[        ] ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:40:5-45:15
+[        ] ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:40:5-45:15
 [        ] intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-[        ] ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:41:9-44:18
+[        ] ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:41:9-44:18
 [        ] action#android.intent.action.PROCESS_TEXT
-[        ] ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:42:13-72
+[        ] ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:42:13-72
 [        ] 	android:name
-[        ] 		ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:42:21-70
+[        ] 		ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:42:21-70
 [        ] data
-[        ] ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:43:13-50
+[        ] ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:43:13-50
 [        ] 	android:mimeType
-[        ] 		ADDED from /home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:43:19-48
+[        ] 		ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:43:19-48
 [        ] uses-permission#android.permission.INTERNET
-[        ] ADDED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:6:5-66
+[        ] ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:6:5-66
 [        ] 	android:name
-[        ] 		ADDED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:6:22-64
+[        ] 		ADDED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:6:22-64
 [        ] uses-sdk
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
-[        ] INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
-[        ] MERGED from [:device_info_plus] /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-[        ] MERGED from [:device_info_plus] /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-[        ] MERGED from [:path_provider_android] /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-[        ] MERGED from [:path_provider_android] /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] MERGED from [:device_info_plus] /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+[        ] MERGED from [:device_info_plus] /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+[        ] MERGED from [:path_provider_android] /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+[        ] MERGED from [:path_provider_android] /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 [        ] MERGED from [androidx.fragment:fragment:1.7.1] /home/du/.gradle/caches/8.14/transforms/4c51916ff37a9658c8d6828c270c80db/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
 [        ] MERGED from [androidx.fragment:fragment:1.7.1] /home/du/.gradle/caches/8.14/transforms/4c51916ff37a9658c8d6828c270c80db/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
 [        ] MERGED from [androidx.window:window:1.2.0] /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0/AndroidManifest.xml:20:5-44
@@ -1573,9 +1573,9 @@
 [        ] MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/du/.gradle/caches/8.14/transforms/7262faf0930d8e675a0350c519409b0b/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 [        ] MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/du/.gradle/caches/8.14/transforms/7262faf0930d8e675a0350c519409b0b/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 [        ] 	android:targetSdkVersion
-[        ] 		INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] 		INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
 [        ] 	android:minSdkVersion
-[        ] 		INJECTED from /home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml
+[        ] 		INJECTED from /home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml
 [        ] uses-library#androidx.window.extensions
 [        ] ADDED from [androidx.window:window:1.2.0] /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0/AndroidManifest.xml:23:9-25:40
 [        ] 	android:required
@@ -1594,7 +1594,7 @@
 [        ] 		ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
 [        ] 	android:name
 [        ] 		ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
-[        ] permission#com.example.china_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+[        ] permission#com.example.chinese_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 [        ] ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
 [        ] 	android:protectionLevel
 [        ] 		ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
@@ -1604,7 +1604,7 @@
 [        ] ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
 [        ] 	android:name
 [        ] 		ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
-[        ] uses-permission#com.example.china_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+[        ] uses-permission#com.example.chinese_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 [        ] ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
 [        ] 	android:name
 [        ] 		ADDED from [androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
@@ -1672,7 +1672,7 @@
 [        ] 		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/du/.gradle/caches/8.14/transforms/3277a884253313ee48bbf886ecc6e75e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
 [        ] 1<?xml version="1.0" encoding="utf-8"?>
 [        ] 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-[        ] 3    package="com.example.china_chess_app"
+[        ] 3    package="com.example.chinese_chess_app"
 [        ] 4    android:versionCode="1"
 [        ] 5    android:versionName="1.0.0" >
 [        ] 6
@@ -1685,8 +1685,8 @@
 [        ] 13         to allow setting breakpoints, to provide hot reload, etc.
 [        ] 14    -->
 [        ] 15    <uses-permission android:name="android.permission.INTERNET" />
-[        ] 15-->/home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:6:5-66
-[        ] 15-->/home/du/Desktop/china_chess_app/android/app/src/debug/AndroidManifest.xml:6:22-64
+[        ] 15-->/home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:6:5-66
+[        ] 15-->/home/du/Desktop/chinese_chess_app/android/app/src/debug/AndroidManifest.xml:6:22-64
 [        ] 16    <!--
 [        ] 17     Required to query activities that can process text, see:
 [        ] 18         https://developer.android.com/training/package-visibility and
@@ -1695,27 +1695,27 @@
 [        ] 21         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
 [        ] 22    -->
 [        ] 23    <queries>
-[        ] 23-->/home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:40:5-45:15
+[        ] 23-->/home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:40:5-45:15
 [        ] 24        <intent>
-[        ] 24-->/home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:41:9-44:18
+[        ] 24-->/home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:41:9-44:18
 [        ] 25            <action android:name="android.intent.action.PROCESS_TEXT" />
-[        ] 25-->/home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:42:13-72
-[        ] 25-->/home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:42:21-70
+[        ] 25-->/home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:42:13-72
+[        ] 25-->/home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:42:21-70
 [        ] 26
 [        ] 27            <data android:mimeType="text/plain" />
-[        ] 27-->/home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:43:13-50
-[        ] 27-->/home/du/Desktop/china_chess_app/android/app/src/main/AndroidManifest.xml:43:19-48
+[        ] 27-->/home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:43:13-50
+[        ] 27-->/home/du/Desktop/chinese_chess_app/android/app/src/main/AndroidManifest.xml:43:19-48
 [        ] 28        </intent>
 [        ] 29    </queries>
 [        ] 30
 [        ] 31    <permission
 [        ] 31-->[androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
-[        ] 32        android:name="com.example.china_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+[        ] 32        android:name="com.example.chinese_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 [        ] 32-->[androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
 [        ] 33        android:protectionLevel="signature" />
 [        ] 33-->[androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
 [        ] 34
-[        ] 35    <uses-permission android:name="com.example.china_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+[        ] 35    <uses-permission android:name="com.example.chinese_chess_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 [        ] 35-->[androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
 [        ] 35-->[androidx.core:core:1.13.1] /home/du/.gradle/caches/8.14/transforms/18d73cde30a5b54f6f5f99264f1a87ce/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
 [        ] 36
@@ -1728,7 +1728,7 @@
 [        ] 42        android:icon="@mipmap/ic_launcher"
 [        ] 43        android:label="Grandmaster Mentor" >
 [        ] 44        <activity
-[        ] 45            android:name="com.example.china_chess_app.MainActivity"
+[        ] 45            android:name="com.example.chinese_chess_app.MainActivity"
 [        ] 46            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 [        ] 47            android:exported="true"
 [        ] 48            android:hardwareAccelerated="true"
@@ -1778,7 +1778,7 @@
 [        ] 85-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/du/.gradle/caches/8.14/transforms/995b070476d18899f913b1ffde99d18d/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
 [        ] 86            android:name="androidx.startup.InitializationProvider"
 [        ] 86-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/du/.gradle/caches/8.14/transforms/995b070476d18899f913b1ffde99d18d/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
-[        ] 87            android:authorities="com.example.china_chess_app.androidx-startup"
+[        ] 87            android:authorities="com.example.chinese_chess_app.androidx-startup"
 [        ] 87-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/du/.gradle/caches/8.14/transforms/995b070476d18899f913b1ffde99d18d/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
 [        ] 88            android:exported="false" >
 [        ] 88-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/du/.gradle/caches/8.14/transforms/995b070476d18899f913b1ffde99d18d/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
@@ -1836,7 +1836,7 @@
 [        ] 116    </application>
 [        ] 117
 [        ] 118</manifest>
-[        ] Merged manifest saved to /home/du/Desktop/china_chess_app/build/app/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml
+[        ] Merged manifest saved to /home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml
 [        ] Resolve mutations for :app:processDebugManifest (Thread[Execution worker Thread 3,5,main]) started.
 [        ] :app:processDebugManifest (Thread[Execution worker Thread 3,5,main]) started.
 [  +46 ms] > Task :app:processDebugManifest
@@ -1931,7 +1931,7 @@
 [        ]   Class path of task ':app:compressDebugAssets' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:compressDebugAssets'.
 [ +699 ms] > Task :app:desugarDebugFileDependencies
-[        ] Caching disabled for IdentityTransform: /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
+[        ] Caching disabled for IdentityTransform: /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
 [        ]   Build cache is disabled
 [        ]   Caching not enabled.
 [        ] Caching disabled for AarTransform: /home/du/.gradle/caches/8.14/transforms/4c51916ff37a9658c8d6828c270c80db/transformed/fragment-1.7.1 because:
@@ -2185,7 +2185,7 @@
 [        ] Task ':app:processDebugResources' is not up-to-date because:
 [        ]   Class path of task ':app:processDebugResources' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:processDebugResources'.
-[        ] Aapt output file /home/du/Desktop/china_chess_app/build/app/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_
+[        ] Aapt output file /home/du/Desktop/chinese_chess_app/build/app/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_
 [+1493 ms] Resolve mutations for :path_provider_android:compileDebugJavaWithJavac (Thread[Execution worker Thread 4,5,main]) started.
 [        ] :path_provider_android:compileDebugJavaWithJavac (Thread[Execution worker Thread 4,5,main]) started.
 [ +301 ms] > Task :device_info_plus:compileDebugKotlin
@@ -2274,7 +2274,7 @@
 [        ]   Build cache is disabled
 [        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Android/Sdk/build-tools/35.0.0/core-lambda-stubs.jar because:
 [        ]   Build cache is disabled
-[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar because:
+[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/.gradle/caches/8.14/transforms/9011fcea3a787b398883f07b176f58fa/transformed/activity-1.8.1-api.jar because:
 [        ]   Build cache is disabled
@@ -2398,7 +2398,7 @@
 [        ] Script file extensions: 
 [        ] Using Kotlin/JVM incremental compilation
 [        ] [KOTLIN] Kotlin compilation 'jdkHome' argument: null
-[        ] Options for KOTLIN DAEMON: IncrementalCompilationOptions(super=CompilationOptions(compilerMode=INCREMENTAL_COMPILER, targetPlatform=JVM, reportCategories=[0, 3], reportSeverity=2, requestedCompilationResults=[0], kotlinScriptExtensions=[]), sourceChanges=org.jetbrains.kotlin.buildtools.api.SourcesChanges$Unknown@654512ea, classpathChanges=NotAvailableForNonIncrementalRun, workingDir=/home/du/Desktop/china_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/cacheable, multiModuleICSettings=MultiModuleICSettings(buildHistoryFile=/home/du/Desktop/china_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/local-state/build-history.bin, useModuleDetection=true), icFeatures=IncrementalCompilationFeatures(usePreciseJavaTracking=true, withAbiSnapshot=false, preciseCompilationResultsBackup=true, keepIncrementalCompilationCachesInMemory=true, enableUnsafeIncrementalCompilationForMultiplatform=false, enableMonotonousIncrementalCompileSetExpansion=true), outputFiles=[/home/du/Desktop/china_chess_app/build/device_info_plus/tmp/kotlin-classes/debug, /home/du/Desktop/china_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/cacheable, /home/du/Desktop/china_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/local-state])
+[        ] Options for KOTLIN DAEMON: IncrementalCompilationOptions(super=CompilationOptions(compilerMode=INCREMENTAL_COMPILER, targetPlatform=JVM, reportCategories=[0, 3], reportSeverity=2, requestedCompilationResults=[0], kotlinScriptExtensions=[]), sourceChanges=org.jetbrains.kotlin.buildtools.api.SourcesChanges$Unknown@654512ea, classpathChanges=NotAvailableForNonIncrementalRun, workingDir=/home/du/Desktop/chinese_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/cacheable, multiModuleICSettings=MultiModuleICSettings(buildHistoryFile=/home/du/Desktop/chinese_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/local-state/build-history.bin, useModuleDetection=true), icFeatures=IncrementalCompilationFeatures(usePreciseJavaTracking=true, withAbiSnapshot=false, preciseCompilationResultsBackup=true, keepIncrementalCompilationCachesInMemory=true, enableUnsafeIncrementalCompilationForMultiplatform=false, enableMonotonousIncrementalCompileSetExpansion=true), outputFiles=[/home/du/Desktop/chinese_chess_app/build/device_info_plus/tmp/kotlin-classes/debug, /home/du/Desktop/chinese_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/cacheable, /home/du/Desktop/chinese_chess_app/build/device_info_plus/kotlin/compileDebugKotlin/local-state])
 [ +185 ms] w: file:///home/du/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2/android/src/main/kotlin/dev/fluttercommunity/plus/device_info/MethodCallHandlerImpl.kt:75:47 'static field SERIAL: String!' is deprecated. Deprecated in Java.
 [        ] Finished executing kotlin compiler using DAEMON strategy
 [ +599 ms] > Task :path_provider_android:compileDebugJavaWithJavac
@@ -2507,7 +2507,7 @@
 [        ]   Build cache is disabled
 [        ] Caching disabled for EnumerateClassesTransform: /home/du/.gradle/caches/8.14/transforms/98db7dc4448e99f72c6263633d074e45/transformed/viewpager-1.0.0-runtime.jar because:
 [        ]   Build cache is disabled
-[        ] Caching disabled for EnumerateClassesTransform: /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
+[        ] Caching disabled for EnumerateClassesTransform: /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for EnumerateClassesTransform: /home/du/.gradle/caches/8.14/transforms/52e431470450a95c72737fbd07995eec/transformed/lifecycle-livedata-core-ktx-2.7.0-runtime.jar because:
 [        ]   Build cache is disabled
@@ -2607,33 +2607,33 @@
 [ +295 ms] Resolve mutations for :app:mergeExtDexDebug (Thread[included builds,5,main]) started.
 [        ] :app:mergeExtDexDebug (Thread[included builds,5,main]) started.
 [ +898 ms] > Transform classes.jar (project :device_info_plus) with DexingWithClasspathTransform
-[        ] Caching disabled for DexingWithClasspathTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar because:
+[        ] Caching disabled for DexingWithClasspathTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar because:
 [        ]   Build cache is disabled
-[        ] DexingWithClasspathTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar is not up-to-date because:
+[        ] DexingWithClasspathTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar is not up-to-date because:
 [        ]   No history is available.
-[        ] The input changes require a full rebuild for incremental DexingWithClasspathTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar.
-[        ] Running dexing transform non-incrementally for '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar'
+[        ] The input changes require a full rebuild for incremental DexingWithClasspathTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar.
+[        ] Running dexing transform non-incrementally for '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar'
 [        ] DexingOutputSplitTransform (Thread[Execution worker Thread 2,5,main]) started.
 [        ] > Transform classes.jar (project :device_info_plus) with DexingOutputSplitTransform
-[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/.transforms/8938c9e132aea921a6a497621da35d28/transformed/classes because:
+[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/.transforms/8938c9e132aea921a6a497621da35d28/transformed/classes because:
 [        ]   Build cache is disabled
 [        ]   Caching not enabled.
 [        ] DexingOutputSplitTransform (Thread[Execution worker Thread 2,5,main]) started.
 [        ] > Transform classes.jar (project :device_info_plus) with DexingOutputSplitTransform
-[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/.transforms/8938c9e132aea921a6a497621da35d28/transformed/classes because:
+[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/.transforms/8938c9e132aea921a6a497621da35d28/transformed/classes because:
 [        ]   Build cache is disabled
 [        ]   Caching not enabled.
 [ +200 ms] > Task :app:compileDebugKotlin
 [        ] Adding -Xuse-inline-scopes-numbers Kotlin compiler flag for task :app:compileDebugAndroidTestKotlin
 [        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.20/5380b19fa1924399b62ce3a1faffebb2b4f82272/kotlin-stdlib-2.2.20.jar because:
 [        ]   Build cache is disabled
-[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar because:
+[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/.gradle/caches/modules-2/files-2.1/io.flutter/armeabi_v7a_debug/1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/635cbe52ee43d26e05f45a4e4716254fdb6544f6/armeabi_v7a_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262.jar because:
 [        ]   Build cache is disabled
-[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
+[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
 [        ]   Build cache is disabled
-[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar because:
+[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.9.1/b17951747e38bf3986a24431b9ba0d039958aa5f/annotation-jvm-1.9.1.jar because:
 [        ]   Build cache is disabled
@@ -2643,65 +2643,65 @@
 [        ]   Build cache is disabled
 [        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/.gradle/caches/modules-2/files-2.1/io.flutter/x86_64_debug/1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/c3e8189a1baa169151f54b98d987972289900998/x86_64_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262.jar because:
 [        ]   Build cache is disabled
-[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar because:
+[        ] Caching disabled for BuildToolsApiClasspathEntrySnapshotTransform: /home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for task ':app:compileDebugKotlin' because:
 [        ]   Build cache is disabled
 [        ] Task ':app:compileDebugKotlin' is not up-to-date because:
 [        ]   Class path of task ':app:compileDebugKotlin' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:compileDebugKotlin'.
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/kotlin', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
-[        ] Kotlin source files: /home/du/Desktop/china_chess_app/android/app/src/main/kotlin/com/example/china_chess_app/MainActivity.kt
-[   +1 ms] Java source files: /home/du/Desktop/china_chess_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/kotlin', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
+[        ] Kotlin source files: /home/du/Desktop/chinese_chess_app/android/app/src/main/kotlin/com/example/chinese_chess_app/MainActivity.kt
+[   +1 ms] Java source files: /home/du/Desktop/chinese_chess_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 [        ] Script source files: 
 [        ] Script file extensions: 
 [        ] Using Kotlin/JVM incremental compilation
 [        ] [KOTLIN] Kotlin compilation 'jdkHome' argument: null
-[        ] Options for KOTLIN DAEMON: IncrementalCompilationOptions(super=CompilationOptions(compilerMode=INCREMENTAL_COMPILER, targetPlatform=JVM, reportCategories=[0, 3], reportSeverity=2, requestedCompilationResults=[0], kotlinScriptExtensions=[]), sourceChanges=org.jetbrains.kotlin.buildtools.api.SourcesChanges$Unknown@654512ea, classpathChanges=NotAvailableForNonIncrementalRun, workingDir=/home/du/Desktop/china_chess_app/build/app/kotlin/compileDebugKotlin/cacheable, multiModuleICSettings=MultiModuleICSettings(buildHistoryFile=/home/du/Desktop/china_chess_app/build/app/kotlin/compileDebugKotlin/local-state/build-history.bin, useModuleDetection=true), icFeatures=IncrementalCompilationFeatures(usePreciseJavaTracking=true, withAbiSnapshot=false, preciseCompilationResultsBackup=true, keepIncrementalCompilationCachesInMemory=true, enableUnsafeIncrementalCompilationForMultiplatform=false, enableMonotonousIncrementalCompileSetExpansion=true), outputFiles=[/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug, /home/du/Desktop/china_chess_app/build/app/kotlin/compileDebugKotlin/cacheable, /home/du/Desktop/china_chess_app/build/app/kotlin/compileDebugKotlin/local-state])
+[        ] Options for KOTLIN DAEMON: IncrementalCompilationOptions(super=CompilationOptions(compilerMode=INCREMENTAL_COMPILER, targetPlatform=JVM, reportCategories=[0, 3], reportSeverity=2, requestedCompilationResults=[0], kotlinScriptExtensions=[]), sourceChanges=org.jetbrains.kotlin.buildtools.api.SourcesChanges$Unknown@654512ea, classpathChanges=NotAvailableForNonIncrementalRun, workingDir=/home/du/Desktop/chinese_chess_app/build/app/kotlin/compileDebugKotlin/cacheable, multiModuleICSettings=MultiModuleICSettings(buildHistoryFile=/home/du/Desktop/chinese_chess_app/build/app/kotlin/compileDebugKotlin/local-state/build-history.bin, useModuleDetection=true), icFeatures=IncrementalCompilationFeatures(usePreciseJavaTracking=true, withAbiSnapshot=false, preciseCompilationResultsBackup=true, keepIncrementalCompilationCachesInMemory=true, enableUnsafeIncrementalCompilationForMultiplatform=false, enableMonotonousIncrementalCompileSetExpansion=true), outputFiles=[/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug, /home/du/Desktop/chinese_chess_app/build/app/kotlin/compileDebugKotlin/cacheable, /home/du/Desktop/chinese_chess_app/build/app/kotlin/compileDebugKotlin/local-state])
 [        ] Finished executing kotlin compiler using DAEMON strategy
 [        ] > Transform classes.jar (project :path_provider_android) with DexingWithClasspathTransform
-[        ] Caching disabled for DexingWithClasspathTransform: /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar because:
+[        ] Caching disabled for DexingWithClasspathTransform: /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar because:
 [        ]   Build cache is disabled
-[        ] DexingWithClasspathTransform: /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar is not up-to-date because:
+[        ] DexingWithClasspathTransform: /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar is not up-to-date because:
 [        ]   No history is available.
-[        ] The input changes require a full rebuild for incremental DexingWithClasspathTransform: /home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar.
-[        ] Running dexing transform non-incrementally for '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar'
+[        ] The input changes require a full rebuild for incremental DexingWithClasspathTransform: /home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar.
+[        ] Running dexing transform non-incrementally for '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar'
 [        ] DexingOutputSplitTransform (Thread[Execution worker Thread 12,5,main]) started.
 [        ] > Transform classes.jar (project :path_provider_android) with DexingOutputSplitTransform
-[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/china_chess_app/build/path_provider_android/.transforms/17492e68420c73b62ddb7de0d2fe103c/transformed/classes because:
+[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/chinese_chess_app/build/path_provider_android/.transforms/17492e68420c73b62ddb7de0d2fe103c/transformed/classes because:
 [        ]   Build cache is disabled
 [        ]   Caching not enabled.
 [        ] DexingOutputSplitTransform (Thread[Execution worker Thread 12,5,main]) started.
 [        ] > Transform classes.jar (project :path_provider_android) with DexingOutputSplitTransform
-[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/china_chess_app/build/path_provider_android/.transforms/17492e68420c73b62ddb7de0d2fe103c/transformed/classes because:
+[        ] Caching disabled for DexingOutputSplitTransform: /home/du/Desktop/chinese_chess_app/build/path_provider_android/.transforms/17492e68420c73b62ddb7de0d2fe103c/transformed/classes because:
 [        ]   Build cache is disabled
 [        ]   Caching not enabled.
 [ +890 ms] > Task :app:mergeExtDexDebug
@@ -3000,7 +3000,7 @@
 [        ] Compilation mode: in-process compilation
 [        ] Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
 [        ] Compiling with toolchain '/home/du/Android/jdk-17'.
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/java', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/java', not found
 [        ] Compiling with JDK Java compiler API.
 [        ] Class dependency analysis for incremental compilation took 0.0 secs.
 [        ] Created classpath snapshot for incremental compilation in 0.006 secs.
@@ -3013,36 +3013,36 @@
 [        ]   Class path of task ':app:dexBuilderDebug' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:dexBuilderDebug'.
 [        ] Dex builder is incremental : false 
-[        ] Processing input /home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug
-[        ] Processing input /home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes
-[        ] Dexing /home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug
-[        ] Dexing /home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes
-[        ] Processing input /home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar
-[        ] Dexing /home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_5.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_0.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_1.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_4.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_3.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_2.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_6.jar'
-[        ] Dexing '/home/du/Desktop/china_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_7.jar'
+[        ] Processing input /home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug
+[        ] Processing input /home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes
+[        ] Dexing /home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug
+[        ] Dexing /home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes
+[        ] Processing input /home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar
+[        ] Dexing /home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_5.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_0.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_1.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_4.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_3.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/tmp/kotlin-classes/debug' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_2.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/javac/debug/compileDebugJavaWithJavac/classes' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_6.jar'
+[        ] Dexing '/home/du/Desktop/chinese_chess_app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar' to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_7.jar'
 [        ] Done with all dex archive conversions
 [        ] Resolve mutations for :app:mergeDebugGlobalSynthetics (Thread[Execution worker Thread 2,5,main]) started.
 [        ] :app:mergeDebugGlobalSynthetics (Thread[Execution worker Thread 2,5,main]) started.
@@ -3183,19 +3183,19 @@
 [        ] Task ':app:mergeDebugGlobalSynthetics' is not up-to-date because:
 [        ]   Class path of task ':app:mergeDebugGlobalSynthetics' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] > Task :app:processDebugJavaRes
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/main/resources', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/resources', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/main/resources', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/main/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/main/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/resources', not found
 [        ] Caching disabled for task ':app:processDebugJavaRes' because:
 [        ]   Build cache is disabled
 [        ]   Caching has been disabled for the task
 [   +1 ms] Task ':app:processDebugJavaRes' is not up-to-date because:
 [        ]   Class path of task ':app:processDebugJavaRes' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/main/resources', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/resources', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/main/resources', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/android/app/src/debug/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/main/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/main/resources', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/android/app/src/debug/resources', not found
 [        ] Resolve mutations for :app:mergeDebugJavaResource (Thread[Execution worker Thread 8,5,main]) started.
 [        ] :app:mergeDebugJavaResource (Thread[Execution worker Thread 8,5,main]) started.
 [ +979 ms] Resolve mutations for :app:mergeLibDexDebug (Thread[Execution worker Thread 11,5,main]) started.
@@ -3210,16 +3210,16 @@
 [        ] Task ':app:mergeLibDexDebug' is not up-to-date because:
 [        ]   Class path of task ':app:mergeLibDexDebug' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:mergeLibDexDebug'.
-[        ] Merging to '/home/du/Desktop/china_chess_app/build/app/intermediates/dex/debug/mergeLibDexDebug/0' with D8 from all or a subset of dex files in /home/du/Desktop/china_chess_app/build/device_info_plus/.transforms/8938c9e132aea921a6a497621da35d28/transformed/classes/classes_dex, /home/du/Desktop/china_chess_app/build/path_provider_android/.transforms/17492e68420c73b62ddb7de0d2fe103c/transformed/classes/classes_dex, and from all global synthetics files in 
+[        ] Merging to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/dex/debug/mergeLibDexDebug/0' with D8 from all or a subset of dex files in /home/du/Desktop/chinese_chess_app/build/device_info_plus/.transforms/8938c9e132aea921a6a497621da35d28/transformed/classes/classes_dex, /home/du/Desktop/chinese_chess_app/build/path_provider_android/.transforms/17492e68420c73b62ddb7de0d2fe103c/transformed/classes/classes_dex, and from all global synthetics files in 
 [        ] > Task :app:mergeProjectDexDebug
 [        ] Caching disabled for task ':app:mergeProjectDexDebug' because:
 [        ]   Build cache is disabled
 [        ] Task ':app:mergeProjectDexDebug' is not up-to-date because:
 [        ]   Class path of task ':app:mergeProjectDexDebug' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
 [        ] The input changes require a full rebuild for incremental task ':app:mergeProjectDexDebug'.
-[        ] Merging to '/home/du/Desktop/china_chess_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/1' with D8 from all or a subset of dex files in /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out, and from all global synthetics files in 
-[        ] Merging to '/home/du/Desktop/china_chess_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/0' with D8 from all or a subset of dex files in /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_0.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_1.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_2.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_3.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_4.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_5.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_6.jar, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_7.jar, and from all global synthetics files in 
-[        ] Merging to '/home/du/Desktop/china_chess_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/14' with D8 from all or a subset of dex files in /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out, /home/du/Desktop/china_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out, and from all global synthetics files in 
+[        ] Merging to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/1' with D8 from all or a subset of dex files in /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out, and from all global synthetics files in 
+[        ] Merging to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/0' with D8 from all or a subset of dex files in /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_0.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_1.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_2.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_3.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_4.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_5.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_6.jar, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out/49cc48a72ed8d9719a368563def4dc028400fd0cbfa08b8393ce1a7dc11b1a61_7.jar, and from all global synthetics files in 
+[        ] Merging to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/14' with D8 from all or a subset of dex files in /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out, /home/du/Desktop/chinese_chess_app/build/app/intermediates/project_dex_archive/debug/dexBuilderDebug/out, and from all global synthetics files in 
 [  +98 ms] > Task :app:mergeDebugJniLibFolders
 [        ] Caching disabled for task ':app:mergeDebugJniLibFolders' because:
 [        ]   Build cache is disabled
@@ -3282,7 +3282,7 @@
 [        ] Resolve mutations for :app:mergeDebugNativeLibs (Thread[Execution worker Thread 5,5,main]) started.
 [        ] :app:mergeDebugNativeLibs (Thread[Execution worker Thread 5,5,main]) started.
 [  +91 ms] > Task :app:mergeExtDexDebug
-[        ] Merging to '/home/du/Desktop/china_chess_app/build/app/intermediates/dex/debug/mergeExtDexDebug' with D8 from all or a subset of dex files in /home/du/.gradle/caches/8.14/transforms/8fff4b485b2399771b49b1ba2c341e0b/transformed/flutter_embedding_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/flutter_embedding_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262_dex, /home/du/.gradle/caches/8.14/transforms/0258f2a92bd21269ca0911bdd8026baa/transformed/fragment-1.7.1-runtime/fragment-1.7.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/453f5024f91211e315ab176490f8071a/transformed/window-1.2.0-runtime/window-1.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/bdaf729b9bb58ad721e4059c22efddb6/transformed/window-java-1.2.0-runtime/window-java-1.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/ed16c9e28303c22b25cd5dbda1738178/transformed/activity-1.8.1-runtime/activity-1.8.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a4dff70d8b432f192db2bb86169601e1/transformed/loader-1.0.0-runtime/loader-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/c8699b3522ae1b59cc7e16985dca178c/transformed/viewpager-1.0.0-runtime/viewpager-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/c9bea25ea67b66504938285131016c95/transformed/lifecycle-livedata-core-ktx-2.7.0-runtime/lifecycle-livedata-core-ktx-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/d69811135655e943a6dd5ea28522897a/transformed/lifecycle-livedata-2.7.0-runtime/lifecycle-livedata-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/f5a9ed3c0a4935ec2cf596c10ff77a7a/transformed/lifecycle-viewmodel-2.7.0-runtime/lifecycle-viewmodel-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/c637ab863747a4f698498e1d20129f77/transformed/lifecycle-livedata-core-2.7.0-runtime/lifecycle-livedata-core-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/2ffa1fc56fcc18923aabcc1f5f76e239/transformed/lifecycle-viewmodel-savedstate-2.7.0-runtime/lifecycle-viewmodel-savedstate-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a3e67d53d8da5cbe519304b6f651c951/transformed/core-ktx-1.13.1-runtime/core-ktx-1.13.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/193d094a494a1cb9459b89afe084abbc/transformed/customview-1.0.0-runtime/customview-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/03e1464fbfc49e6fcdaade8bd3b0fe1f/transformed/core-1.13.1-runtime/core-1.13.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/7b514f1c6de740222703964c3a272c32/transformed/lifecycle-runtime-2.7.0-runtime/lifecycle-runtime-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a59cdda13a4e993f970c964348085474/transformed/lifecycle-process-2.7.0-runtime/lifecycle-process-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/08682b65f5670bffc3f7480ed8fbcab3/transformed/savedstate-1.2.1-runtime/savedstate-1.2.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/afb85421824a945b58766b9df97220b7/transformed/lifecycle-common-2.7.0/lifecycle-common-2.7.0_dex, /home/du/.gradle/caches/8.14/transforms/ea796d0810e6941e4c9cb2e06713f73f/transformed/profileinstaller-1.3.1-runtime/profileinstaller-1.3.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a445a6ebf7ce6939af7282d5bbd5436a/transformed/startup-runtime-1.1.1-runtime/startup-runtime-1.1.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/30644ad06df3853486042c8e866c12af/transformed/tracing-1.2.0-runtime/tracing-1.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/3f96838e2f904a1ddb650dee5eb6d360/transformed/core-runtime-2.2.0-runtime/core-runtime-2.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/be522c6b69c4c310239bd0c0933b2d8e/transformed/core-common-2.2.0/core-common-2.2.0_dex, /home/du/.gradle/caches/8.14/transforms/61cf3b98bb105e6409c1fb1754b8b302/transformed/versionedparcelable-1.1.1-runtime/versionedparcelable-1.1.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/2ad9fe93de01548781877135c10f2996/transformed/collection-1.1.0/collection-1.1.0_dex, /home/du/.gradle/caches/8.14/transforms/f93fdcccf97e4b1200da9afcc638d9fb/transformed/interpolator-1.0.0-runtime/interpolator-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/ab51b0731c16dde285d8caf3049495e1/transformed/concurrent-futures-1.1.0/concurrent-futures-1.1.0_dex, /home/du/.gradle/caches/8.14/transforms/a574448480a27d6619a418e7914f6abb/transformed/core-1.0.0-runtime/core-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/fbdfd132556f243c66ddcca4d9fdc47c/transformed/annotation-jvm-1.9.1/annotation-jvm-1.9.1_dex, /home/du/.gradle/caches/8.14/transforms/83c3fe5c75efbd3cc05ca29bd14abb1c/transformed/annotation-experimental-1.4.0-runtime/annotation-experimental-1.4.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a4d5392c31c555d0d3d4c05ca40caf0f/transformed/kotlinx-coroutines-android-1.7.1/kotlinx-coroutines-android-1.7.1_dex, /home/du/.gradle/caches/8.14/transforms/a3d4ec1cb804b960c6be4e2c2e3b745e/transformed/kotlinx-coroutines-core-jvm-1.7.1/kotlinx-coroutines-core-jvm-1.7.1_dex, /home/du/.gradle/caches/8.14/transforms/7590f703e43019955f9e3bf1f0fc36b9/transformed/kotlin-stdlib-2.2.20/kotlin-stdlib-2.2.20_dex, /home/du/.gradle/caches/8.14/transforms/54be2abe3e0e19fb9d72afb0466a82d6/transformed/annotations-23.0.0/annotations-23.0.0_dex, /home/du/.gradle/caches/8.14/transforms/f5fb3f57b1d0d50bf9f3ffc5f0b022f2/transformed/listenablefuture-1.0/listenablefuture-1.0_dex, and from all global synthetics files in 
+[        ] Merging to '/home/du/Desktop/chinese_chess_app/build/app/intermediates/dex/debug/mergeExtDexDebug' with D8 from all or a subset of dex files in /home/du/.gradle/caches/8.14/transforms/8fff4b485b2399771b49b1ba2c341e0b/transformed/flutter_embedding_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/flutter_embedding_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262_dex, /home/du/.gradle/caches/8.14/transforms/0258f2a92bd21269ca0911bdd8026baa/transformed/fragment-1.7.1-runtime/fragment-1.7.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/453f5024f91211e315ab176490f8071a/transformed/window-1.2.0-runtime/window-1.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/bdaf729b9bb58ad721e4059c22efddb6/transformed/window-java-1.2.0-runtime/window-java-1.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/ed16c9e28303c22b25cd5dbda1738178/transformed/activity-1.8.1-runtime/activity-1.8.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a4dff70d8b432f192db2bb86169601e1/transformed/loader-1.0.0-runtime/loader-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/c8699b3522ae1b59cc7e16985dca178c/transformed/viewpager-1.0.0-runtime/viewpager-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/c9bea25ea67b66504938285131016c95/transformed/lifecycle-livedata-core-ktx-2.7.0-runtime/lifecycle-livedata-core-ktx-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/d69811135655e943a6dd5ea28522897a/transformed/lifecycle-livedata-2.7.0-runtime/lifecycle-livedata-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/f5a9ed3c0a4935ec2cf596c10ff77a7a/transformed/lifecycle-viewmodel-2.7.0-runtime/lifecycle-viewmodel-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/c637ab863747a4f698498e1d20129f77/transformed/lifecycle-livedata-core-2.7.0-runtime/lifecycle-livedata-core-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/2ffa1fc56fcc18923aabcc1f5f76e239/transformed/lifecycle-viewmodel-savedstate-2.7.0-runtime/lifecycle-viewmodel-savedstate-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a3e67d53d8da5cbe519304b6f651c951/transformed/core-ktx-1.13.1-runtime/core-ktx-1.13.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/193d094a494a1cb9459b89afe084abbc/transformed/customview-1.0.0-runtime/customview-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/03e1464fbfc49e6fcdaade8bd3b0fe1f/transformed/core-1.13.1-runtime/core-1.13.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/7b514f1c6de740222703964c3a272c32/transformed/lifecycle-runtime-2.7.0-runtime/lifecycle-runtime-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a59cdda13a4e993f970c964348085474/transformed/lifecycle-process-2.7.0-runtime/lifecycle-process-2.7.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/08682b65f5670bffc3f7480ed8fbcab3/transformed/savedstate-1.2.1-runtime/savedstate-1.2.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/afb85421824a945b58766b9df97220b7/transformed/lifecycle-common-2.7.0/lifecycle-common-2.7.0_dex, /home/du/.gradle/caches/8.14/transforms/ea796d0810e6941e4c9cb2e06713f73f/transformed/profileinstaller-1.3.1-runtime/profileinstaller-1.3.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a445a6ebf7ce6939af7282d5bbd5436a/transformed/startup-runtime-1.1.1-runtime/startup-runtime-1.1.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/30644ad06df3853486042c8e866c12af/transformed/tracing-1.2.0-runtime/tracing-1.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/3f96838e2f904a1ddb650dee5eb6d360/transformed/core-runtime-2.2.0-runtime/core-runtime-2.2.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/be522c6b69c4c310239bd0c0933b2d8e/transformed/core-common-2.2.0/core-common-2.2.0_dex, /home/du/.gradle/caches/8.14/transforms/61cf3b98bb105e6409c1fb1754b8b302/transformed/versionedparcelable-1.1.1-runtime/versionedparcelable-1.1.1-runtime_dex, /home/du/.gradle/caches/8.14/transforms/2ad9fe93de01548781877135c10f2996/transformed/collection-1.1.0/collection-1.1.0_dex, /home/du/.gradle/caches/8.14/transforms/f93fdcccf97e4b1200da9afcc638d9fb/transformed/interpolator-1.0.0-runtime/interpolator-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/ab51b0731c16dde285d8caf3049495e1/transformed/concurrent-futures-1.1.0/concurrent-futures-1.1.0_dex, /home/du/.gradle/caches/8.14/transforms/a574448480a27d6619a418e7914f6abb/transformed/core-1.0.0-runtime/core-1.0.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/fbdfd132556f243c66ddcca4d9fdc47c/transformed/annotation-jvm-1.9.1/annotation-jvm-1.9.1_dex, /home/du/.gradle/caches/8.14/transforms/83c3fe5c75efbd3cc05ca29bd14abb1c/transformed/annotation-experimental-1.4.0-runtime/annotation-experimental-1.4.0-runtime_dex, /home/du/.gradle/caches/8.14/transforms/a4d5392c31c555d0d3d4c05ca40caf0f/transformed/kotlinx-coroutines-android-1.7.1/kotlinx-coroutines-android-1.7.1_dex, /home/du/.gradle/caches/8.14/transforms/a3d4ec1cb804b960c6be4e2c2e3b745e/transformed/kotlinx-coroutines-core-jvm-1.7.1/kotlinx-coroutines-core-jvm-1.7.1_dex, /home/du/.gradle/caches/8.14/transforms/7590f703e43019955f9e3bf1f0fc36b9/transformed/kotlin-stdlib-2.2.20/kotlin-stdlib-2.2.20_dex, /home/du/.gradle/caches/8.14/transforms/54be2abe3e0e19fb9d72afb0466a82d6/transformed/annotations-23.0.0/annotations-23.0.0_dex, /home/du/.gradle/caches/8.14/transforms/f5fb3f57b1d0d50bf9f3ffc5f0b022f2/transformed/listenablefuture-1.0/listenablefuture-1.0_dex, and from all global synthetics files in 
 [ +299 ms] > Task :app:mergeDebugJavaResource
 [        ] Caching disabled for AarTransform: /home/du/.gradle/caches/8.14/transforms/de4103a5e2c48184fd376f04eb745ff6/transformed/window-1.2.0 because:
 [        ]   Build cache is disabled
@@ -3485,12 +3485,12 @@
 [        ]   Caching has been disabled for the task
 [        ] Task ':device_info_plus:bundleDebugAar' is not up-to-date because:
 [        ]   Class path of task ':device_info_plus:bundleDebugAar' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/public_res/debug/packageDebugResources/public.txt', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/navigation_json_for_aar/debug/extractDeepLinksForAarDebug/navigation.json', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/annotations_zip/debug/extractDebugAnnotations/annotations.zip', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/merged_consumer_proguard_file/debug/mergeDebugConsumerProguardFiles/proguard.txt', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/lint_publish_jar/global/prepareLintJarForPublish/lint.jar', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/device_info_plus/intermediates/library_art_profile/debug/prepareDebugArtProfile/baseline-prof.txt', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/public_res/debug/packageDebugResources/public.txt', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/navigation_json_for_aar/debug/extractDeepLinksForAarDebug/navigation.json', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/annotations_zip/debug/extractDebugAnnotations/annotations.zip', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/merged_consumer_proguard_file/debug/mergeDebugConsumerProguardFiles/proguard.txt', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/lint_publish_jar/global/prepareLintJarForPublish/lint.jar', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/device_info_plus/intermediates/library_art_profile/debug/prepareDebugArtProfile/baseline-prof.txt', not found
 [        ] Resolve mutations for :device_info_plus:assembleDebug (Thread[Execution worker Thread 10,5,main]) started.
 [        ] :device_info_plus:assembleDebug (Thread[Execution worker Thread 4,5,main]) started.
 [        ] > Task :device_info_plus:assembleDebug
@@ -3558,18 +3558,18 @@
 [        ]   Caching has been disabled for the task
 [        ] Task ':path_provider_android:bundleDebugAar' is not up-to-date because:
 [        ]   Class path of task ':path_provider_android:bundleDebugAar' has changed from 9d044dca61a0cb66d9c7caad8effcb1b to e0668d5d1e0059b97156d140219f0f94.
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/public_res/debug/packageDebugResources/public.txt', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/navigation_json_for_aar/debug/extractDeepLinksForAarDebug/navigation.json', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/annotations_zip/debug/extractDebugAnnotations/annotations.zip', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/merged_consumer_proguard_file/debug/mergeDebugConsumerProguardFiles/proguard.txt', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/lint_publish_jar/global/prepareLintJarForPublish/lint.jar', not found
-[        ] file or directory '/home/du/Desktop/china_chess_app/build/path_provider_android/intermediates/library_art_profile/debug/prepareDebugArtProfile/baseline-prof.txt', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/public_res/debug/packageDebugResources/public.txt', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/navigation_json_for_aar/debug/extractDeepLinksForAarDebug/navigation.json', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/annotations_zip/debug/extractDebugAnnotations/annotations.zip', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/merged_consumer_proguard_file/debug/mergeDebugConsumerProguardFiles/proguard.txt', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/lint_publish_jar/global/prepareLintJarForPublish/lint.jar', not found
+[        ] file or directory '/home/du/Desktop/chinese_chess_app/build/path_provider_android/intermediates/library_art_profile/debug/prepareDebugArtProfile/baseline-prof.txt', not found
 [        ] Resolve mutations for :path_provider_android:assembleDebug (Thread[included builds,5,main]) started.
 [        ] :path_provider_android:assembleDebug (Thread[included builds,5,main]) started.
 [        ] > Task :path_provider_android:assembleDebug
 [        ] Skipping task ':path_provider_android:assembleDebug' as it has no actions.
 [ +197 ms] > Task :app:mergeDebugNativeLibs
-[        ] Caching disabled for ExtractJniTransform: /home/du/Desktop/china_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
+[        ] Caching disabled for ExtractJniTransform: /home/du/Desktop/chinese_chess_app/build/app/intermediates/flutter/debug/libs.jar because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for ExtractJniTransform: /home/du/.gradle/caches/modules-2/files-2.1/io.flutter/flutter_embedding_debug/1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262/1551faa27faebc81f617c2d5bcd8bda7acb1ee85/flutter_embedding_debug-1.0.0-a18df97ca57a249df5d8d68cd0820600223ce262.jar because:
 [        ]   Build cache is disabled
@@ -3759,15 +3759,15 @@
 [        ] C/C++: Folder /home/du/Android/Sdk/ndk-bundle does not exist. Ignoring.
 [        ] C/C++: Folder /home/du/Android/Sdk/ndk-bundle does not exist. Ignoring.
 [        ] C/C++: Folder /home/du/Android/Sdk/ndk-bundle does not exist. Ignoring.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libflutter.so' due to missing strip tool for ABI 'x86_64'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libflutter.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86/libflutter.so' due to missing strip tool for ABI 'x86'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libpikafish.so' due to missing strip tool for ABI 'x86_64'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/armeabi-v7a/libflutter.so' due to missing strip tool for ABI 'armeabi-v7a'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libc++_shared.so' due to missing strip tool for ABI 'x86_64'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libpikafish.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libpikafish_dotprod.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
-[        ] Unable to strip library '/home/du/Desktop/china_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libVkLayer_khronos_validation.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libflutter.so' due to missing strip tool for ABI 'x86_64'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libflutter.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86/libflutter.so' due to missing strip tool for ABI 'x86'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libpikafish.so' due to missing strip tool for ABI 'x86_64'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/armeabi-v7a/libflutter.so' due to missing strip tool for ABI 'armeabi-v7a'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libc++_shared.so' due to missing strip tool for ABI 'x86_64'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libpikafish.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libpikafish_dotprod.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
+[        ] Unable to strip library '/home/du/Desktop/chinese_chess_app/build/app/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/arm64-v8a/libVkLayer_khronos_validation.so' due to missing strip tool for ABI 'arm64-v8a'. Packaging it as is.
 [        ] Unable to strip the following libraries, packaging them as they are: libVkLayer_khronos_validation.so, libc++_shared.so, libflutter.so, libpikafish.so, libpikafish_dotprod.so. Run with --info option to learn more.
 [        ] Resolve mutations for :app:packageDebug (Thread[Execution worker Thread 5,5,main]) started.
 [        ] :app:packageDebug (Thread[Execution worker Thread 5,5,main]) started.
@@ -3796,14 +3796,14 @@
 [        ]   Task has not declared any outputs despite executing actions.
 [        ] AAPT2 aapt2-8.11.1-12782657-linux Daemon #0: shutdown
 [        ] Build a58f3c47-74c0-4aa2-8f71-7ca41a4d4aac is closed
-[        ] [Incubating] Problems report is available at: file:///home/du/Desktop/china_chess_app/build/reports/problems/problems-report.html
+[        ] [Incubating] Problems report is available at: file:///home/du/Desktop/chinese_chess_app/build/reports/problems/problems-report.html
 [        ] Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
 [        ] You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
 [        ] For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 [        ] BUILD SUCCESSFUL in 42s
 [        ] 100 actionable tasks: 96 executed, 4 up-to-date
 [  +20 ms] Running Gradle task 'assembleDebug'... (completed in 43.0s)
-[   +3 ms] Calculate SHA1: LocalDirectory: '/home/du/Desktop/china_chess_app/build/app/outputs/flutter-apk'/app-debug.apk
+[   +3 ms] Calculate SHA1: LocalDirectory: '/home/du/Desktop/chinese_chess_app/build/app/outputs/flutter-apk'/app-debug.apk
 [+1256 ms] ✓ Built build/app/outputs/flutter-apk/app-debug.apk
 [   +3 ms] "flutter apk" took 44,574ms.
 [ +182 ms] ensureAnalyticsSent: 177ms

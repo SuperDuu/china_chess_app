@@ -1,6 +1,6 @@
 {
-    "name": "china_chess_app",
-    "short_name": "china_chess_app",
+    "name": "chinese_chess_app",
+    "short_name": "chinese_chess_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

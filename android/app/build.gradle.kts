@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.china_chess_app"
+    namespace = "com.example.chinese_chess_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

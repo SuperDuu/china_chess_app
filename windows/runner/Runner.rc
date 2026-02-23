@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "china_chess_app" "\0"
+            VALUE "FileDescription", "chinese_chess_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "china_chess_app" "\0"
+            VALUE "InternalName", "chinese_chess_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "china_chess_app.exe" "\0"
-            VALUE "ProductName", "china_chess_app" "\0"
+            VALUE "OriginalFilename", "chinese_chess_app.exe" "\0"
+            VALUE "ProductName", "chinese_chess_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

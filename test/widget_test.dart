@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:china_chess_app/main.dart';
+import 'package:chinese_chess_app/main.dart';
 
 void main() {
   testWidgets('App smoke test', (WidgetTester tester) async {

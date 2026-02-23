@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:china_chess_app/game/xiangqi_model.dart';
-import 'package:china_chess_app/bloc/game_bloc.dart';
-import 'package:china_chess_app/bloc/analysis_bloc.dart';
+import 'package:chinese_chess_app/game/xiangqi_model.dart';
+import 'package:chinese_chess_app/bloc/game_bloc.dart';
+import 'package:chinese_chess_app/bloc/analysis_bloc.dart';
 
 /// Draws the Xiangqi board and all pieces using CustomPainter.
 /// Handles selection, valid move highlights, last move, and PV preview.

@@ -1,4 +1,4 @@
-package com.example.china_chess_app
+package com.example.chinese_chess_app
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -7,7 +7,7 @@ import io.flutter.plugin.common.MethodChannel
 class MainActivity : FlutterActivity() {
 
     companion object {
-        private const val CHANNEL = "com.example.china_chess_app/engine"
+        private const val CHANNEL = "com.example.chinese_chess_app/engine"
     }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
