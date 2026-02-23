@@ -174,14 +174,16 @@ class _GameScreenState extends State<GameScreen> {
                               ),
                               onPressed: (canAnalyze && !state.isGeminiLoading)
                                   ? () {
-                                      final out = state.latestOutput!;
+                                      final topMoves = state.multiPvs.values
+                                          .toList()
+                                        ..sort((a, b) => (a.multiPv ?? 0)
+                                            .compareTo(b.multiPv ?? 0));
+
                                       ctx
                                           .read<AnalysisBloc>()
                                           .add(RequestGeminiAnalysisEvent(
                                             fen: ctx.read<GameBloc>().state.fen,
-                                            score: out.scoreCp ?? 0,
-                                            bestMove: out.bestMove ?? '?',
-                                            pvMoves: out.pvMoves ?? [],
+                                            topMoves: topMoves,
                                           ));
                                     }
                                   : null,
@@ -199,8 +201,15 @@ class _GameScreenState extends State<GameScreen> {
                     label: 'Hoàn',
                     onTap: () {
                       context.read<AnalysisBloc>().add(ResetAnalysisEvent());
-                      context.read<GameBloc>().add(UndoMoveEvent());
-                      Future.delayed(const Duration(milliseconds: 50), () {
+                      // If bot mode, undo twice
+                      if (widget.playerColor != null) {
+                        context.read<GameBloc>().add(UndoMoveEvent());
+                        context.read<GameBloc>().add(UndoMoveEvent());
+                      } else {
+                        context.read<GameBloc>().add(UndoMoveEvent());
+                      }
+
+                      Future.delayed(const Duration(milliseconds: 100), () {
                         if (!context.mounted) return;
                         final fen = context.read<GameBloc>().state.fen;
                         context.read<EngineBloc>().add(AnalyzeUndoEvent(fen));

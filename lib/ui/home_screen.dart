@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'settings/settings_screen.dart';
 import 'game_screen.dart';
-import 'lessons/lessons_screen.dart';
+import 'pgn_browser_screen.dart';
 import '../game/xiangqi_model.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -146,10 +146,13 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 16),
             _buildMenuButton(
               context,
-              'Bí Kíp (Bài Học)',
-              Icons.menu_book_rounded,
-              () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const LessonsScreen())),
+              'Ngân Hàng Kỳ Phổ (PGN)',
+              Icons.collections_bookmark_rounded,
+              () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const PgnBrowserScreen()),
+                );
+              },
               isAnalysis: false,
             ),
           ],

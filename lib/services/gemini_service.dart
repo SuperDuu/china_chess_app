@@ -26,35 +26,34 @@ class GeminiService {
 
   Stream<String> analyzePositionStream({
     required String fen,
-    required int score,
-    required String bestMove,
-    required List<String> pvMoves,
+    required List<String> translatedTopMoves,
     required PieceColor playerPerspective,
     bool isCheck = false,
     bool isMate = false,
   }) async* {
-    final pvList = pvMoves.join(', ');
+    final movesJson = translatedTopMoves.join(', ');
     final sideToMove = fen.contains(' w') ? PieceColor.red : PieceColor.black;
     final sideName = sideToMove == PieceColor.red ? 'Đỏ' : 'Đen';
-    final isAnalysisForPlayer = sideToMove == playerPerspective;
 
     final prompt = '''
-Bạn là Vũ Đức Du Mentor. Bạn đang phân tích CẬN KỀ và CHI TIẾT cho phe $sideName.
-${isAnalysisForPlayer ? "Đối tượng bạn đang khuyên là NGƯỜI CHƠI." : "Đối tượng bạn đang cảnh báo là về THÂM Ý ĐỐI THỦ."}
-${isCheck ? "⚠️ LƯU Ý: Phe $sideName đang bị CHIẾU TƯỚNG!" : ""}
-${isMate ? "💀 CẢNH BÁO: Hình cờ này sắp SÁT CỤC (MATE)!" : ""}
+Bạn là "Vũ Đức Du Mentor" - một chuyên gia Cờ Tướng hàng đầu.
+Nhiệm vụ: Cung cấp "Giải thích sâu" cho phe $sideName.
 
-Dữ liệu:
+Dữ liệu kĩ thuật:
 - Hình cờ (FEN): $fen
-- Score: $score
-- Bestmove: $bestMove
-- Chuỗi PV: $pvList
+- Top 3 nước đi gợi ý (đã dịch sang tiếng Việt): $movesJson
 
-Yêu cầu (CHUYÊN SÂU):
-1. Độ dài: Khoảng 300 ký tự (phân tích kỹ hơn).
-2. Logic: ${isAnalysisForPlayer ? "Chỉ rõ tại sao nước này giúp Người chơi ưu thế về mặt chiến thuật (chiếm lộ, bắt quân, hay tạo thế)." : "Vạch trần âm mưu hiểm hóc của đối thủ và cách nó phá vỡ thế trận của bạn."}
-3. Triển vọng: Dự đoán 2-3 nhịp tiếp theo dựa trên chuỗi PV.
-4. Chốt hạ: Khẳng định lý do đây là nước đi "sát sườn" nhất hiện tại.
+Yêu cầu phân tích (NGHIÊM NGẶT):
+1. Ngôn ngữ: Phải dùng khẩu quyết Cờ Tướng Việt Nam (ví dụ: "Pháo 2 bình 5", "Mã 8 tấn 7", "Xe 9 thối 1"). KHÔNG dùng tọa độ như a0h0.
+2. Cấu trúc "Giải thích sâu":
+   - So sánh nước đi tốt nhất hiện tại với 2 nước đi khả dĩ khác trong danh sách $movesJson.
+   - Phân tích sự đánh đổi về:
+     + Vật chất vs Vị trí (VD: "Phế Mã để chiếm lộ sườn").
+     + Tấn công vs Phòng thủ (VD: "Bỏ Xe chiếu bí hay về Sĩ giữ thành").
+3. Độ dài: Khoảng 300-400 ký tự.
+4. Kết thúc: Bắt buộc bằng một câu hỏi gợi mở để người chơi tự tư duy nước tiếp theo.
+
+Phong cách: Uyên bác, thực dụng, giống như một người thầy đang dạy học trò.
 ''';
 
     try {

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/engine_bloc.dart';
 import 'bloc/game_bloc.dart';
 import 'bloc/analysis_bloc.dart';
+import 'bloc/puzzle_bloc.dart';
 import 'ui/home_screen.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class GrandmasterMentorApp extends StatelessWidget {
         BlocProvider(create: (_) => EngineBloc()),
         BlocProvider(create: (_) => GameBloc()),
         BlocProvider(create: (_) => AnalysisBloc()),
+        BlocProvider(create: (_) => PuzzleBloc()..add(LoadPuzzlesEvent())),
       ],
       child: MaterialApp(
         title: 'Cờ Tướng AI',

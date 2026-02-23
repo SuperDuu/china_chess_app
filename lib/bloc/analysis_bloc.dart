@@ -22,15 +22,16 @@ class RequestHintEvent extends AnalysisEvent {
 
 class RequestGeminiAnalysisEvent extends AnalysisEvent {
   final String fen;
-  final int score;
-  final String bestMove;
-  final List<String> pvMoves;
+  final List<EngineOutput> topMoves; // Store top 3 moves for comparison
   RequestGeminiAnalysisEvent({
     required this.fen,
-    required this.score,
-    required this.bestMove,
-    required this.pvMoves,
+    required this.topMoves,
   });
+}
+
+class ChangeTabEvent extends AnalysisEvent {
+  final int index;
+  ChangeTabEvent(this.index);
 }
 
 class DismissHintEvent extends AnalysisEvent {}
@@ -62,6 +63,7 @@ class AnalysisState {
   final String? lastGeminiFen;
   final Map<int, EngineOutput> pendingMultiPvs;
   final PieceColor? humanColor;
+  final int activeTabIndex;
 
   AnalysisState({
     XiangqiBoard? board,
@@ -81,6 +83,7 @@ class AnalysisState {
     this.lastGeminiFen,
     this.pendingMultiPvs = const {},
     this.humanColor,
+    this.activeTabIndex = 0,
   }) : board = board ?? XiangqiBoard.startingPosition();
 
   AnalysisState copyWith({
@@ -101,6 +104,7 @@ class AnalysisState {
     String? lastGeminiFen,
     Map<int, EngineOutput>? pendingMultiPvs,
     PieceColor? humanColor,
+    int? activeTabIndex,
     bool clearGemini = false,
     bool clearHumanColor = false,
   }) =>
@@ -125,6 +129,7 @@ class AnalysisState {
         pendingMultiPvs:
             pendingMultiPvs ?? (clearGemini ? {} : this.pendingMultiPvs),
         humanColor: clearHumanColor ? null : (humanColor ?? this.humanColor),
+        activeTabIndex: activeTabIndex ?? this.activeTabIndex,
       );
 
   /// Generates the explanation message.
@@ -193,6 +198,11 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     on<DismissHintEvent>(_onDismiss);
     on<ResetAnalysisEvent>(_onReset);
     on<SetHumanColorEvent>(_onSetHumanColor);
+    on<ChangeTabEvent>(_onChangeTab);
+  }
+
+  void _onChangeTab(ChangeTabEvent e, Emitter<AnalysisState> emit) {
+    emit(state.copyWith(activeTabIndex: e.index));
   }
 
   void _onReset(ResetAnalysisEvent e, Emitter<AnalysisState> emit) {
@@ -362,12 +372,22 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     final isCheck = state.board.isCheck(state.sideToAnalyze);
     final isMate = state.latestOutput?.isMate ?? false;
 
+    // Translate the top 3 moves into Vietnamese notation
+    final List<String> translatedTopMoves = [];
+    for (var out in e.topMoves.take(3)) {
+      if (out.pvMoves != null && out.pvMoves!.isNotEmpty) {
+        final vn =
+            NotationTranslator.toVietnamese(out.pvMoves![0], state.board);
+        final score =
+            out.isMate ? 'Sát cục' : '${(out.scoreCp ?? 0) / 100.0} điểm';
+        translatedTopMoves.add('$vn ($score)');
+      }
+    }
+
     try {
       final stream = _gemini.analyzePositionStream(
         fen: e.fen,
-        score: e.score,
-        bestMove: e.bestMove,
-        pvMoves: e.pvMoves,
+        translatedTopMoves: translatedTopMoves,
         playerPerspective: state.humanColor ?? state.sideToAnalyze,
         isCheck: isCheck,
         isMate: isMate,

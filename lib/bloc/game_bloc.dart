@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../game/xiangqi_model.dart';
 import '../game/analysis_model.dart';
+import '../services/sound_manager.dart';
 
 // ─── Events ─────────────────────────────────────────────────────────────────
 
@@ -29,6 +30,12 @@ class PreviewMoveEvent extends GameEvent {
 class ClearPreviewEvent extends GameEvent {}
 
 class UndoMoveEvent extends GameEvent {}
+
+class StartFromFenEvent extends GameEvent {
+  final String fen;
+  final PieceColor playerColor;
+  StartFromFenEvent({required this.fen, required this.playerColor});
+}
 
 // ─── State ───────────────────────────────────────────────────────────────────
 
@@ -89,6 +96,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     on<PreviewMoveEvent>(_onPreview);
     on<ClearPreviewEvent>(_onClearPreview);
     on<UndoMoveEvent>(_onUndo);
+    on<StartFromFenEvent>(_onStartFromFen);
   }
 
   void _onReset(ResetGameEvent e, Emitter<GameState> emit) {
@@ -115,8 +123,21 @@ class GameBloc extends Bloc<GameEvent, GameState> {
   }
 
   void _onMove(MakeMoveEvent e, Emitter<GameState> emit) {
+    final toPos = BoardPos.fromUcci(e.ucciMove.substring(2, 4));
+    final isCapture = state.board.at(toPos!) != null;
+
     _boardHistory.add(state.board);
     final newBoard = state.board.applyMove(e.ucciMove);
+
+    // Play Sound
+    if (newBoard.isCheck(newBoard.sideToMove)) {
+      SoundManager().playCheck();
+    } else if (isCapture) {
+      SoundManager().playCapture();
+    } else {
+      SoundManager().playMove();
+    }
+
     emit(state.copyWith(
       board: newBoard,
       moveHistory: [...state.moveHistory, e.ucciMove],
@@ -136,14 +157,24 @@ class GameBloc extends Bloc<GameEvent, GameState> {
 
   void _onUndo(UndoMoveEvent e, Emitter<GameState> emit) {
     if (_boardHistory.isEmpty) return;
-    final prev = _boardHistory.removeLast();
+    final prevBoard = _boardHistory.removeLast();
     final newHistory = [...state.moveHistory];
     if (newHistory.isNotEmpty) newHistory.removeLast();
+
     emit(state.copyWith(
-      board: prev,
+      board: prevBoard,
       moveHistory: newHistory,
+      lastMove: newHistory.isNotEmpty ? newHistory.last : null,
       clearSelected: true,
       clearPreview: true,
+    ));
+  }
+
+  void _onStartFromFen(StartFromFenEvent e, Emitter<GameState> emit) {
+    _boardHistory.clear();
+    emit(GameState(
+      board: XiangqiBoard.fromFen(e.fen),
+      moveHistory: const [],
     ));
   }
 }

@@ -86,6 +86,7 @@ class _BoardPainter extends CustomPainter {
     _drawRiverLabel(canvas, size, cw, ch);
     _drawCoordinates(canvas, size, cw, ch);
     _drawHighlights(canvas, cw, ch);
+    _drawLastMoveArrow(canvas, cw, ch);
     _drawSuggestionArrows(canvas, cw, ch);
     _drawPieces(canvas, cw, ch);
   }
@@ -296,6 +297,24 @@ class _BoardPainter extends CustomPainter {
     }
   }
 
+  void _drawLastMoveArrow(Canvas canvas, double cw, double ch) {
+    if (gameState.lastMove == null || gameState.lastMove!.length < 4) return;
+
+    final from = BoardPos.fromUcci(gameState.lastMove!.substring(0, 2));
+    final to = BoardPos.fromUcci(gameState.lastMove!.substring(2, 4));
+    if (from == null || to == null) return;
+
+    final paint = Paint()
+      ..color = Colors.blue.withOpacity(0.6)
+      ..strokeWidth = 4.0
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    final p1 = _getPosOffset(from, cw, ch);
+    final p2 = _getPosOffset(to, cw, ch);
+    _drawArrow(canvas, p1, p2, paint, cw);
+  }
+
   Offset _getPosOffset(BoardPos pos, double cw, double ch) {
     int col = flipped ? 8 - pos.col : pos.col;
     int row = flipped ? 9 - pos.row : pos.row;
@@ -323,7 +342,8 @@ class _BoardPainter extends CustomPainter {
   }
 
   void _drawSuggestionArrows(Canvas canvas, double cw, double ch) {
-    if (analysisState.multiPvs.isEmpty) return;
+    if (analysisState.multiPvs.isEmpty || analysisState.activeTabIndex != 3)
+      return;
 
     // Sort by multipv index (1 is best)
     final sortedPvs = analysisState.multiPvs.entries.toList()
